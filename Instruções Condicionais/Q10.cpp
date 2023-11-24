@@ -1,5 +1,5 @@
 /*
--------------------------------------------------
+------------------------------------------------
 10. Crie um algoritmo/fluxograma/programa que 
 leia um número e imprima se ele é positivo, 
 negativo ou neutro.

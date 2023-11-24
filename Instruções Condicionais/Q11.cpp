@@ -1,8 +1,8 @@
 /*
--------------------------------------------------
+------------------------------------------------
 11. Crie um algoritmo/fluxograma/programa que 
-solicite três números ao usuário e imprima se eles 
-estão em ordem crescente.
+solicite três números ao usuário e imprima se 
+eles estão em ordem crescente.
  */
 #include <iostream>
 #include <locale.h>
@@ -15,14 +15,14 @@ int main () {
 	cout<<"Informe o segundo numero:";
 	cin>>num2;
 	cout<<"Informe o terceiro numero:";
-	cin>>num3;		
-	
+	cin>>num3;
+
 	if (num1 <= num2 && num2 <= num3)
-		cout<<"Estão em ordem crescente"<<endl; 
+		cout<<"Estão em ordem crescente"; 
 	else if (num1 >= num2 && num2 >= num3)
-		cout<<"Estão em ordem decrescente"<<endl; 		
+		cout<<"Estão em ordem decrescente";
 	else
-		cout<<"Estão fora de ordem"<<endl;	
-			
+		cout<<"Estão fora de ordem";
+
 	return 0;
 }

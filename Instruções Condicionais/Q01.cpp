@@ -35,7 +35,7 @@ int main () {
 			cout<<"Domingo"<<endl;
 			break;			
 		default:
-			cout<<"Dia inválido!"<<endl;																																
+			cout<<"Dia inválido!"<<endl;
 	}
 	return 0;
 }

@@ -1,7 +1,7 @@
 /*
 ------------------------------------------------
 12. Crie um algoritmo/fluxograma/programa que 
-solicite ao usuário um mês e um ano e imprima se 
+solicite ao usuário um mês e um ano e imprima se
 o mês indicado tem 28, 29, 30 ou 31 dias.
  */
 #include <iostream>
@@ -13,29 +13,27 @@ int main () {
 	cout<<"Informe o ano:";
 	cin>>ano;
 	cout<<"Informe o mês [1..12]:";
-	cin>>mes;	
+	cin>>mes;
 
 	switch(mes) {
-		case 1: case 3:	case 5: case 7: 
-		case 8: case 10: case 12:								
-			cout<<"O mês tem 31 dias."<<endl;
+		case 1: case 3:	case 5: case 7:
+		case 8: case 10: case 12:
+			cout<<"O mês tem 31 dias.";
 			break;
-		case 2: case 4:	case 6:	case 9: case 11:						
+		case 2: case 4:	case 6:	case 9: case 11:
 			if (mes == 2) {
 				int resto = ano % 4;
 				if (resto == 0) {
 					cout<<"O mês tem 29 dias.";
-					cout<<endl;						
 				} else {
 					cout<<"O mês tem 28 dias.";
-					cout<<endl;						
 				}
 			} else {
-				cout<<"O mês tem 30 dias."<<endl;				
+				cout<<"O mês tem 30 dias.";
 			}
 			break;
 		default:
-			cout<<"Mês inválido!"<<endl;																																
-	}	
+			cout<<"Mês inválido!"<<endl;
+	}
 	return 0;
 }

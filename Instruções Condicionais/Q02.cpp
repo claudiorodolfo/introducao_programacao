@@ -51,7 +51,7 @@ int main () {
 			cout<<"Dezembro"<<endl;
 			break;
 		default:
-			cout<<"Mês inválido!"<<endl;																																
+			cout<<"Mês inválido!"<<endl;
 	}
 	return 0;
 }

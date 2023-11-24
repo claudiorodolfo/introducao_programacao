@@ -26,7 +26,7 @@ int main () {
 			cout<<"Fim de Semana"<<endl;
 			break;			
 		default:
-			cout<<"Dia inválido!"<<endl;																																
+			cout<<"Dia inválido!"<<endl;
 	}
 	return 0;
 }

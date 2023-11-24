@@ -1,7 +1,7 @@
 /*
--------------------------------------------------
+------------------------------------------------
 7. Crie um algoritmo/fluxograma/programa que 
-solicite ao usuário um valor de investimento. Se 
+solicite ao usuário um valor de investimento. Se
 o valor for maior que R$ 10.000,00, imprima 
 "Investimento Alto", senão, imprima 
 "Investimento Baixo".
