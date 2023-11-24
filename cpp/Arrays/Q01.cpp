@@ -2,11 +2,13 @@
 ------------------------------------------------
 1. Crie um algoritmo/fluxograma/programa que 
 declare um array de inteiros e imprima seus 
+elementos. 
  */
 #include <iostream>
 #include <locale.h>
 //#include <vector>
 //#include <array>
+
 using namespace std;
 
 int main () {

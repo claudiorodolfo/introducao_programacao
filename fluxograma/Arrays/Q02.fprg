@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-24 01:55:50 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMDE6NTI6MTYgIjsyMDky"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMDE6NTU6NTAgIjsxOzIyMDE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="2. Crie um algoritmo/fluxograma/programa que preencha um array com os quadrados dos n&#250;meros de 1 a N, onde N &#233; um valor informado pelo usu&#225;rio."/>
+            <declare name="i, n" type="Integer" array="False" size=""/>
+            <output expression="&quot;Informe um valor:&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="dado" type="Integer" array="True" size="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <assign variable="dado[i]" expression="(i+1)^2"/>
+            </for>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="dado[i] &amp; &quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
