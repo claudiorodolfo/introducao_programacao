@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-24 12:04:54 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMTI6MDI6MTYgIjsyMDg5"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMTI6MDQ6NTQgIjsyOzIyMDI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="8. Crie um algoritmo/fluxograma/programa que leia um n&#250;mero e imprima o seu valor absoluto, independente dele ser positivo ou negativo, sem uso de biblioteca matem&#225;tica."/>
+            <declare name="numero" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe um numero:&quot;" newline="True"/>
+            <input variable="numero"/>
+            <if expression="numero &lt; 0">
+                <then>
+                    <assign variable="numero" expression="numero * (-1)"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="&quot;O m&#243;dulo do numero informado &#233;: &quot; &amp; numero" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
