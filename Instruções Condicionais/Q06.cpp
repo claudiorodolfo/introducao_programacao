@@ -1,8 +1,8 @@
 /*
--------------------------------------------------
-6. Crie um algoritmo/fluxograma/programa que leia 
-um número e se este número for maior do que 20, 
-imprima a metade dele.
+------------------------------------------------
+6. Crie um algoritmo/fluxograma/programa que 
+leia um número e se este número for maior do que
+20, imprima a metade dele.
  */
 #include <iostream>
 #include <locale.h>

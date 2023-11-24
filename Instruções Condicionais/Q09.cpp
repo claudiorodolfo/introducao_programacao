@@ -1,7 +1,7 @@
 /*
--------------------------------------------------
-9. Crie um algoritmo/fluxograma/programa que leia 
-um número inteiro e escreva se ele é par ou 
+------------------------------------------------
+9. Crie um algoritmo/fluxograma/programa que 
+leia um número inteiro e escreva se ele é par ou
 ímpar.
  */
 #include <iostream>

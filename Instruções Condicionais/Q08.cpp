@@ -1,7 +1,7 @@
 /*
--------------------------------------------------
-8. Crie um algoritmo/fluxograma/programa que leia 
-um número e imprima o seu valor absoluto, 
+------------------------------------------------
+8. Crie um algoritmo/fluxograma/programa que 
+leia um número e imprima o seu valor absoluto, 
 independente dele ser positivo ou negativo, sem 
 uso de biblioteca matemática.
  */
@@ -20,7 +20,7 @@ int main () {
 	}
 			
 	cout<<"O módulo do numero informado é: ";
-	cout<<numero<<endl;	
+	cout<<numero;	
 		
 	return 0;
 }

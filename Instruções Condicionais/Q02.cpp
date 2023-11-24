@@ -1,8 +1,8 @@
 /*
--------------------------------------------------
-2. Crie um algoritmo/fluxograma/programa que peça 
-ao usuário um número de 1 a 12 e imprima o mês 
-correspondente.
+------------------------------------------------
+2. Crie um algoritmo/fluxograma/programa que 
+peça ao usuário um número de 1 a 12 e imprima o 
+mês correspondente.
  */
 #include <iostream>
 #include <locale.h>
@@ -55,4 +55,3 @@ int main () {
 	}
 	return 0;
 }
-

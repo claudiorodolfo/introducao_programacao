@@ -1,5 +1,5 @@
 /*
--------------------------------------------------
+------------------------------------------------
 3. Crie um algoritmo/fluxograma/programa que 
 solicite ao usuário um número de 1 a 7 
 representando um dia da semana. Imprima se é um 

@@ -1,8 +1,8 @@
 /*
--------------------------------------------------
-1. Crie um algoritmo/fluxograma/programa que peça 
-ao usuário um número de 1 a 7 e imprima o dia da 
-semana correspondente.
+------------------------------------------------
+1. Crie um algoritmo/fluxograma/programa que 
+peça ao usuário um número de 1 a 7 e imprima o 
+dia da semana correspondente.
  */
 #include <iostream>
 #include <locale.h>
@@ -39,4 +39,3 @@ int main () {
 	}
 	return 0;
 }
-

@@ -1,5 +1,5 @@
 /*
--------------------------------------------------
+------------------------------------------------
 4. Crie um algoritmo/fluxograma/programa que 
 solicite ao usuário o código de um produto e 
 imprima a categoria dele: 1 a 10 (Alimentação), 
