@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-24 01:10:44 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMDE6MDM6NTUgIjsyMDkx"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMDE6MTA6NDQgIjsxOzIxOTU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dado" type="Integer" array="True" size="8"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <assign variable="dado[0]" expression="2"/>
+            <assign variable="dado[1]" expression="3"/>
+            <assign variable="dado[2]" expression="9"/>
+            <assign variable="dado[3]" expression="2"/>
+            <assign variable="dado[4]" expression="1"/>
+            <assign variable="dado[5]" expression="32"/>
+            <assign variable="dado[6]" expression="0"/>
+            <assign variable="dado[7]" expression="-1"/>
+            <for variable="i" start="1" end="size(dado) -1" direction="inc" step="1">
+                <output expression="dado[i] &amp; &quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
