@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-23 11:56:58 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yMzsiMTE6NDc6NDYgIjsyMDk5"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yMzsiMTE6NTY6NTggIjs5OzIyMTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="3. Crie um algoritmo/fluxograma/programa que leia 3 valores e escreva na tela a m&#233;dia ponderada entre eles. O primeiro valor tem peso 4, o segundo valor tem peso 7 e o terceiro valor tem peso 3."/>
+            <declare name="a, b, c, media" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o primeiro valor:&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Informe o segundo valor:&quot;" newline="True"/>
+            <input variable="b"/>
+            <output expression="&quot;Informe o terceiro valor:&quot;" newline="True"/>
+            <input variable="c"/>
+            <assign variable="media" expression="(a*4 + b*7 + c*3)/14"/>
+            <output expression="&quot;A m&#233;dia ponderada &#233;:&quot; &amp; media" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

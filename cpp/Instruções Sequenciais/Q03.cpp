@@ -19,6 +19,6 @@ int main () {
 	cout<<"Informe o terceiro valor:";
 	cin>>c;	
 	media = (a*4 + b*7 + c*3) / 14;
-	cout<<"A media é:"<<media;
+	cout<<"A media é ponderada é:"<<media;
 	return 0;
 }

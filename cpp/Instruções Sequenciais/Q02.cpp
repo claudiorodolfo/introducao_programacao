@@ -16,6 +16,6 @@ int main () {
 	cout<<"Informe o segundo valor:";
 	cin>>b;
 	media = a*0.4 + b*0.6;
-	cout<<"A media ponderada é:"<<media;
+	cout<<"A média ponderada é:"<<media;
 	return 0;
 }

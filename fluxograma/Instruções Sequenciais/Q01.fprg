@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-23 11:52:40 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yMzsiMTE6NDc6NDYgIjsyMDk5"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yMzsiMTE6NTI6NDAgIjs1OzIyMDE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="1. Crie um algoritmo/fluxograma/programa que leia dois valores num&#233;ricos, e calcule e exiba na tela a m&#233;dia aritm&#233;tica deles. "/>
+            <declare name="a, b, media" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o primeiro valor:&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Informe o segundo valor:&quot;" newline="True"/>
+            <input variable="b"/>
+            <assign variable="media" expression="(a+b)/2"/>
+            <output expression="&quot;A m&#233;dia &#233;:&quot; &amp; media" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

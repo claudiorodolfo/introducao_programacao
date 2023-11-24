@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-23 11:59:42 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yMzsiMTE6NDc6NDYgIjsyMDk5"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yMzsiMTE6NTk6NDIgIjsxMTsyMjU1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="4. Crie um algoritmo/fluxograma/programa que l&#234; o nome de um aluno, as notas de suas tr&#234;s provas e calcule e exiba na tela a m&#233;dia harm&#244;nica das provas."/>
+            <declare name="nota1, nota2, nota3, media" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe a nota 1:&quot;" newline="True"/>
+            <input variable="nota1"/>
+            <output expression="&quot;Informe a nota 2:&quot;" newline="True"/>
+            <input variable="nota2"/>
+            <output expression="&quot;Informe a nota 3:&quot;" newline="True"/>
+            <input variable="nota3"/>
+            <assign variable="media" expression="3/(1/nota1 + 1/nota2 + 1/nota3)"/>
+            <output expression="&quot;A m&#233;dia harm&#244;nica &#233;:&quot; &amp; media" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
