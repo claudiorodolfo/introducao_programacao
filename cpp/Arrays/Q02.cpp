@@ -8,13 +8,14 @@ usuário.
 #include <iostream>
 #include <cmath>
 #include <locale.h>
+#include <cstdlib>
 
 using namespace std;
 
 int main () {
 	setlocale(LC_ALL,"Portuguese");
-	int n;
 	
+	int n;
 	cout<<"Informe um valor:";
 	cin>>n;
 	int dado[n];
@@ -23,9 +24,9 @@ int main () {
 		dado[i] = pow(i+1, 2);
 	}
 	
-	//impressão pra ver se tá certo
+	//impressão pra ver se está certo
 	for (int i = 0; i < n; i++) {
 		cout<<dado[i] <<" ";
 	}
-	return 0;
+	return EXIT_SUCCESS;
 }

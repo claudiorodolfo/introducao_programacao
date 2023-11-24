@@ -6,6 +6,7 @@ elementos.
  */
 #include <iostream>
 #include <locale.h>
+#include <cstdlib>
 //#include <vector>
 //#include <array>
 
@@ -25,5 +26,5 @@ int main () {
 	for (int i = 0; i < tam; i++) {
 		cout<<dado[i]<<" ";
 	}
-	return 0;
+	return EXIT_SUCCESS;
 }
