@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-24 12:08:51 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMTI6MDY6NTcgIjsyMDk4"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMTI6MDg6NTEgIjsyOzIyMDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="1. Crie um algoritmo/fluxograma/programa que imprima os n&#250;meros de 1 a 10."/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="10" direction="inc" step="1">
+                <output expression="i &amp; &quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
