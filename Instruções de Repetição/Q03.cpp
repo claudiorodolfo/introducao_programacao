@@ -1,8 +1,8 @@
 /*
--------------------------------------------------
-3. Crie um algoritmo/fluxograma/programa que peça 
-ao usuário um número e imprima os números de 1 
-até esse número.
+------------------------------------------------
+3. Crie um algoritmo/fluxograma/programa que 
+peça ao usuário um número e imprima os números 
+de 1 até esse número.
  */
 #include <iostream>
 #include <locale.h>
