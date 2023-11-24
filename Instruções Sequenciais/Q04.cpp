@@ -1,8 +1,8 @@
 /*
--------------------------------------------------
-4. Crie um algoritmo/fluxograma/programa que lê o 
-nome de um aluno, as notas de suas três provas e 
-calcule e exiba na tela a média harmônica das 
+------------------------------------------------
+4. Crie um algoritmo/fluxograma/programa que lê 
+o nome de um aluno, as notas de suas três provas
+e calcule e exiba na tela a média harmônica das 
 provas.
  */
 #include <iostream>

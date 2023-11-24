@@ -1,10 +1,10 @@
 /*
--------------------------------------------------
-9. Crie um algoritmo/fluxograma/programa que peça 
-ao usuário para inserir dois números inteiros e, 
-em seguida, imprima o resultado arredondado da 
-divisão do primeiro pelo segundo. Usar a 
-biblioteca cmath.
+------------------------------------------------
+9. Crie um algoritmo/fluxograma/programa que 
+peça ao usuário para inserir dois números 
+inteiros e, em seguida, imprima o resultado 
+arredondado da divisão do primeiro pelo segundo.
+Usar a biblioteca cmath.
  */
 #include <iostream>
 #include <cmath>

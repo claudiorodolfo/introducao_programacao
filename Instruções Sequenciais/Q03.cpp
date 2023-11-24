@@ -1,10 +1,10 @@
 /*
--------------------------------------------------
-3. Crie um algoritmo/fluxograma/programa que leia 
-3 valores e escreva na tela a média ponderada 
-entre eles. O primeiro valor tem peso 4, o 
-segundo valor tem peso 7 e o terceiro valor tem 
-peso 3. 
+------------------------------------------------
+3. Crie um algoritmo/fluxograma/programa que 
+leia 3 valores e escreva na tela a média 
+ponderada entre eles. O primeiro valor tem peso 
+4, o segundo valor tem peso 7 e o terceiro valor
+tem peso 3. 
  */
 #include <iostream>
 #include <locale.h>

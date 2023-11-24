@@ -1,5 +1,5 @@
 /*
--------------------------------------------------
+------------------------------------------------
 11. Crie um algoritmo/fluxograma/programa que 
 solicite ao usuário dois números inteiros e, em 
 seguida, imprima o resultado da potenciação do 

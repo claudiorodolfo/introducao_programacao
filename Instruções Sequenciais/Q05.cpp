@@ -1,9 +1,9 @@
 /*
--------------------------------------------------
+------------------------------------------------
 5. Crie um algoritmo/fluxograma/programa que 
-solicite ao usuário 2 valores, em seguida, troque 
-o valor dessas variáveis e imprima os novos 
-valores.
+solicite ao usuário 2 valores, em seguida, 
+troque o valor dessas variáveis e imprima os 
+novos valores.
  */
 #include <iostream>
 #include <locale.h>

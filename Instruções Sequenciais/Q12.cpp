@@ -1,5 +1,5 @@
 /*
--------------------------------------------------
+------------------------------------------------
 12. Crie um algoritmo/fluxograma/programa que 
 declare uma variável do tipo ponto flutuante e 
 atribua a ela um valor. Em seguida, calcule e 

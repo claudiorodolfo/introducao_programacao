@@ -1,8 +1,8 @@
 /*
--------------------------------------------------
-8. Crie um algoritmo/fluxograma/programa que leia 
-um ângulo em graus, calcule e imprima o seno e o 
-cosseno dele. Usar a biblioteca cmath.
+------------------------------------------------
+8. Crie um algoritmo/fluxograma/programa que 
+leia um ângulo em graus, calcule e imprima o 
+seno e o cosseno dele. Usar a biblioteca cmath.
  */
 #include <iostream>
 #include <cmath>

@@ -1,9 +1,9 @@
 /*
--------------------------------------------------
+------------------------------------------------
 10. Crie um algoritmo/fluxograma/programa que 
 solicite ao usuário um número decimal e, em 
-seguida, calcule e imprima o valor absoluto desse 
-número. Usar a biblioteca cmath.
+seguida, calcule e imprima o valor absoluto 
+desse número. Usar a biblioteca cmath.
  */
 #include <iostream>
 #include <cmath>

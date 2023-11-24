@@ -1,10 +1,10 @@
 /*
--------------------------------------------------
-6. Crie um algoritmo/fluxograma/programa que peça 
-ao usuário para inserir dois números inteiros e, 
-em seguida, imprima o resultado da divisão do 
-primeiro pelo segundo, considerando somente a 
-parte inteira.
+------------------------------------------------
+6. Crie um algoritmo/fluxograma/programa que 
+peça ao usuário para inserir dois números 
+inteiros e, em seguida, imprima o resultado da 
+divisão do primeiro pelo segundo, considerando 
+somente a parte inteira.
  */
 #include <iostream>
 #include <locale.h>
