@@ -4,13 +4,14 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="asus"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2023-11-24 01:10:44 "/>
+        <attribute name="saved" value="2023-11-24 01:13:22 "/>
         <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMDE6MDM6NTUgIjsyMDkx"/>
-        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMDE6MTA6NDQgIjsxOzIxOTU="/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMDE6MTM6MjIgIjsyOzIxOTU="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
+            <comment text="1. Crie um algoritmo/fluxograma/programa que declare um array de inteiros e imprima seus elementos."/>
             <declare name="dado" type="Integer" array="True" size="8"/>
             <declare name="i" type="Integer" array="False" size=""/>
             <assign variable="dado[0]" expression="2"/>
