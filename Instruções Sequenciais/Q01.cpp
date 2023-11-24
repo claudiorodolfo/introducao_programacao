@@ -1,8 +1,8 @@
 /*
--------------------------------------------------
-1. Crie um algoritmo/fluxograma/programa que leia 
-dois valores numéricos, e calcule e exiba na tela 
-a média aritmética deles. 
+------------------------------------------------
+1. Crie um algoritmo/fluxograma/programa que 
+leia dois valores numéricos, e calcule e exiba 
+na tela a média aritmética deles. 
  */
 #include <iostream>
 #include <locale.h>
