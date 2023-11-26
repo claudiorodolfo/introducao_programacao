@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 9. Crie um algoritmo/fluxograma/programa que 
-conte e imprima o número de elementos pares em 
+conte e imprima o nï¿½mero de elementos pares em 
 um array.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;
@@ -19,6 +19,6 @@ int main() {
 		if (dado[i] % 2 == 0)
 			cont++;
 		
-	cout<<"Há "<<cont<<" elementos pares.";
+	cout<<"HÃ¡ "<<cont<<" elementos pares.";
 	return EXIT_SUCCESS;	
 }

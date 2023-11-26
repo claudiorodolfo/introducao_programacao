@@ -1,13 +1,13 @@
 /*
 ------------------------------------------------
 7. Crie um algoritmo/fluxograma/programa que 
-solicite ao usuário um valor de investimento. Se
+solicite ao usuï¿½rio um valor de investimento. Se
 o valor for maior que R$ 10.000,00, imprima 
-"Investimento Alto", senão, imprima 
+"Investimento Alto", senï¿½o, imprima 
 "Investimento Baixo".
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");

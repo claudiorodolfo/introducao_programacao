@@ -5,7 +5,7 @@ substitua todos os elementos negativos em um
 array por zero.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;

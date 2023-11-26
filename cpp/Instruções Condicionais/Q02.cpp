@@ -1,11 +1,12 @@
 /*
 ------------------------------------------------
 2. Crie um algoritmo/fluxograma/programa que 
-peça ao usuário um número de 1 a 12 e imprima o 
-mês correspondente.
+peca ao usuario um numero de 1 a 12 e imprima o 
+mes correspondente.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
+
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");

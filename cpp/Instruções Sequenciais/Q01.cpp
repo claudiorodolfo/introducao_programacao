@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 1. Crie um algoritmo/fluxograma/programa que 
-leia dois valores numéricos, e calcule e exiba 
-na tela a média aritmética deles. 
+leia dois valores numï¿½ricos, e calcule e exiba 
+na tela a mï¿½dia aritmï¿½tica deles. 
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
@@ -15,6 +15,6 @@ int main () {
 	cout<<"Informe o segundo valor:";
 	cin>>b;
 	media = (a + b) / 2;
-	cout<<"A media é:"<<media;
+	cout<<"A media Ã©:"<<media;
 	return 0;
 }

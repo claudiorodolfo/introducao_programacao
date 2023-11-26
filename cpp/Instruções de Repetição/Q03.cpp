@@ -1,16 +1,16 @@
 /*
 ------------------------------------------------
 3. Crie um algoritmo/fluxograma/programa que 
-peça ao usuário um número e imprima os números 
-de 1 até esse número.
+peï¿½a ao usuï¿½rio um nï¿½mero e imprima os nï¿½meros 
+de 1 atï¿½ esse nï¿½mero.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
 	int limite;
-	cout<<"Informe o número:";
+	cout<<"Informe o nÃºmero:";
 	cin>>limite;
 
 	for (int i = 1; i <= limite; i++) {

@@ -1,13 +1,13 @@
 /*
 ------------------------------------------------
 2. Crie um algoritmo/fluxograma/programa que 
-preencha um array com os quadrados dos números 
-de 1 a N, onde N é um valor informado pelo 
-usuário. 
+preencha um array com os quadrados dos nï¿½meros 
+de 1 a N, onde N ï¿½ um valor informado pelo 
+usuï¿½rio. 
  */
 #include <iostream>
 #include <cmath>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;
@@ -24,7 +24,7 @@ int main () {
 		dado[i] = pow(i+1, 2);
 	}
 	
-	//impressão pra ver se está certo
+	//impressï¿½o pra ver se estï¿½ certo
 	for (int i = 0; i < n; i++) {
 		cout<<dado[i] <<" ";
 	}

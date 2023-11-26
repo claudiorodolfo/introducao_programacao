@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 5. Crie um algoritmo/fluxograma/programa que 
-solicite ao usuário um ano e imprima se é 
-bissexto ou não.
+solicite ao usuï¿½rio um ano e imprima se ï¿½ 
+bissexto ou nï¿½o.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
@@ -14,9 +14,9 @@ int main () {
 	cin>>ano;
 	resto = ano % 4;
 	if (resto == 0) {
-		cout<<ano<<" é um ano bissexto!";
+		cout<<ano<<" Ã‰ um ano bissexto!";
 	} else {
-		cout<<ano<<" não é um ano bissexto!";
+		cout<<ano<<" nÃ£o Ã© um ano bissexto!";
 	}
 	return 0;
 }

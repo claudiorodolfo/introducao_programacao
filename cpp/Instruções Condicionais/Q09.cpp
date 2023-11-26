@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 9. Crie um algoritmo/fluxograma/programa que 
-leia um número inteiro e escreva se ele é par ou
-ímpar.
+leia um nï¿½mero inteiro e escreva se ele ï¿½ par ou
+ï¿½mpar.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
@@ -16,7 +16,7 @@ int main () {
 	if (numero % 2 == 0)
 		cout<<"Par"<<endl;
 	else
-		cout<<"Impar"<<endl;
+		cout<<"Ãmpar"<<endl;
 		
 	return 0;
 }

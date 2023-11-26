@@ -1,12 +1,12 @@
 /*
 ------------------------------------------------
 5. Crie um algoritmo/fluxograma/programa que 
-imprima os números de 1 a 100, mas substitua os 
-múltiplos de 3 por "Fizz" e os múltiplos de 5 
+imprima os nï¿½meros de 1 a 100, mas substitua os 
+mï¿½ltiplos de 3 por "Fizz" e os mï¿½ltiplos de 5 
 por "Buzz".
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");

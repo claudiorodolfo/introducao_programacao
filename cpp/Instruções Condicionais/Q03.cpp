@@ -1,12 +1,12 @@
 /*
 ------------------------------------------------
 3. Crie um algoritmo/fluxograma/programa que 
-solicite ao usuário um número de 1 a 7 
-representando um dia da semana. Imprima se é um 
-dia útil ou final de semana.
+solicite ao usuï¿½rio um nï¿½mero de 1 a 7 
+representando um dia da semana. Imprima se ï¿½ um 
+dia ï¿½til ou final de semana.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
@@ -19,14 +19,14 @@ int main () {
 		case 3:
 		case 4:
 		case 5:
-			cout<<"Dia útil"<<endl;
+			cout<<"Dia Ãštil"<<endl;
 			break;
 		case 6:
 		case 7:
 			cout<<"Fim de Semana"<<endl;
 			break;			
 		default:
-			cout<<"Dia inválido!"<<endl;
+			cout<<"Dia invÃ¡lido!"<<endl;
 	}
 	return 0;
 }

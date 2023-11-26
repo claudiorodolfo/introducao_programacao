@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 1. Crie um algoritmo/fluxograma/programa que 
-peça ao usuário um número de 1 a 7 e imprima o 
+peï¿½a ao usuï¿½rio um nï¿½mero de 1 a 7 e imprima o 
 dia da semana correspondente.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
@@ -17,7 +17,7 @@ int main () {
 			cout<<"Segunda-feira"<<endl;
 			break;
 		case 2:
-			cout<<"Terça-feira"<<endl;
+			cout<<"TerÃ§a-feira"<<endl;
 			break;
 		case 3:
 			cout<<"Quarta-feira"<<endl;
@@ -29,13 +29,13 @@ int main () {
 			cout<<"Sexta-feira"<<endl;
 			break;
 		case 6:
-			cout<<"Sábado"<<endl;
+			cout<<"SÃ¡bado"<<endl;
 			break;
 		case 7:
 			cout<<"Domingo"<<endl;
 			break;			
 		default:
-			cout<<"Dia inválido!"<<endl;
+			cout<<"Dia invÃ¡lido!"<<endl;
 	}
 	return 0;
 }

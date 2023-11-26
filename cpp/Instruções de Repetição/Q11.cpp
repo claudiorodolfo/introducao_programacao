@@ -1,20 +1,20 @@
 /*
 ------------------------------------------------
 11. Crie um algoritmo/fluxograma/programa que 
-escreva a média de 10 números informados pelo 
-usuário.
+escreva a mï¿½dia de 10 nï¿½meros informados pelo 
+usuï¿½rio.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
 	int numero, soma = 0;
 	for (int i = 1; i <= 10; i++) {
-		cout<<"Informe o "<<i<<"º numero:";
+		cout<<"Informe o "<<i<<"Âº numero:";
 		cin>>numero;
 		soma += numero;
 	}
-	cout<<"A media é: "<<soma/10;
+	cout<<"A media Ã©: "<<soma/10;
 	return 0;
 }

@@ -1,10 +1,10 @@
 /*
 ------------------------------------------------
 2. Crie um algoritmo/fluxograma/programa que 
-imprima todos os números pares entre 10 e 100.
+imprima todos os nï¿½meros pares entre 10 e 100.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");

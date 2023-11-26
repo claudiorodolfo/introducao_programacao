@@ -1,22 +1,22 @@
 /*
 ------------------------------------------------
 12. Crie um algoritmo/fluxograma/programa que 
-leia uma quantidade de números, e em seguida 
-leia esses números e imprima a média deles.
+leia uma quantidade de nï¿½meros, e em seguida 
+leia esses nï¿½meros e imprima a mï¿½dia deles.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
 	int quantidade, numero, soma = 0;
-	cout<<"Informe qtns números serão lidos:";
+	cout<<"Informe qtns nÃºmeros serÃ£o lidos:";
 	cin>>quantidade;
 	for (int i = 1; i <= quantidade; i++) {
-		cout<<"Informe o "<<i<<"º numero:";
+		cout<<"Informe o "<<i<<"Âº numero:";
 		cin>>numero;
 		soma += numero;
 	}
-	cout<<"A media é: "<<soma/quantidade;
+	cout<<"A media Ã©: "<<soma/quantidade;
 	return 0;
 }

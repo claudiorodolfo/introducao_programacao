@@ -1,14 +1,15 @@
 /*
 ------------------------------------------------
 12. Crie um algoritmo/fluxograma/programa que 
-declare uma variável do tipo ponto flutuante e 
+declare uma variï¿½vel do tipo ponto flutuante e 
 atribua a ela um valor. Em seguida, calcule e 
 imprima a raiz quadrada desse valor. Usar a 
 biblioteca cmath.
  */
 #include <iostream>
 #include <cmath>
-#include <locale.h>
+#include <clocale>
+
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
@@ -19,7 +20,7 @@ int main () {
 	//resultado = pow(valor, 0.5);
 	//resultado = pow(valor, 1/2);	
 	resultado = sqrt(valor);
-	cout<<" raiz quadrada de "<<valor<<" é ";
+	cout<<" raiz quadrada de "<<valor<<" Ã© ";
 	cout<<resultado<<endl;
 	return 0;
 }

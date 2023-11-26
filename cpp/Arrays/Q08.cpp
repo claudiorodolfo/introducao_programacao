@@ -2,10 +2,10 @@
 ------------------------------------------------
 8. Crie um algoritmo/fluxograma/programa que 
 multiplique cada elemento de um array por um
-valor específico. Mostre o antes e o depois.
+valor especï¿½fico. Mostre o antes e o depois.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;

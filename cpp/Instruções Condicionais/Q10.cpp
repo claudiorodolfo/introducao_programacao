@@ -1,16 +1,16 @@
 /*
 ------------------------------------------------
 10. Crie um algoritmo/fluxograma/programa que 
-leia um número e imprima se ele é positivo, 
+leia um nï¿½mero e imprima se ele ï¿½ positivo, 
 negativo ou neutro.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
 	int numero;
-	cout<<"Informe um numero:";
+	cout<<"Informe um nÃºmero:";
 	cin>>numero;
 	
 	if (numero < 0)

@@ -4,7 +4,7 @@
 encontre o segundo maior elemento em um array.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;

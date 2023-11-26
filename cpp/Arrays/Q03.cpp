@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 3. Crie um algoritmo/fluxograma/programa que 
-preencha um array com os números em ordem 
+preencha um array com os nï¿½meros em ordem 
 inversa.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;

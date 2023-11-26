@@ -1,8 +1,8 @@
 /*
 ------------------------------------------------
 4. Crie um algoritmo/fluxograma/programa que 
-imprima a tabuada de multiplicação de um número 
-fornecido pelo usuário.
+imprima a tabuada de multiplicaï¿½ï¿½o de um nï¿½mero 
+fornecido pelo usuï¿½rio.
  */
 #include <iostream>
 #include <locale.h>
@@ -10,7 +10,7 @@ using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
 	int numero;
-	cout<<"Informe o número:";
+	cout<<"Informe o nÃºmero:";
 	cin>>numero;
 
 	for (int i = 1; i <= 10; i++) {

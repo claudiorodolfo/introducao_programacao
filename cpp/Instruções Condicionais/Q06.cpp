@@ -1,16 +1,16 @@
 /*
 ------------------------------------------------
 6. Crie um algoritmo/fluxograma/programa que 
-leia um número e se este número for maior do que
+leia um nï¿½mero e se este nï¿½mero for maior do que
 20, imprima a metade dele.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
 	float numero;
-	cout<<"Informe um número:";
+	cout<<"Informe um nÃºmero:";
 	cin>>numero;
 	
 	if (numero < 20)

@@ -1,10 +1,10 @@
 /*
 ------------------------------------------------
 1. Crie um algoritmo/fluxograma/programa que 
-imprima os números de 1 a 10.
+imprima os nï¿½meros de 1 a 10.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");

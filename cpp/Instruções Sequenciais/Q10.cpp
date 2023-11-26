@@ -1,21 +1,21 @@
 /*
 ------------------------------------------------
 10. Crie um algoritmo/fluxograma/programa que 
-solicite ao usuário um número decimal e, em 
+solicite ao usuï¿½rio um nï¿½mero decimal e, em 
 seguida, calcule e imprima o valor absoluto 
-desse número. Usar a biblioteca cmath.
+desse nï¿½mero. Usar a biblioteca cmath.
  */
 #include <iostream>
 #include <cmath>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
 	float num, resultado;
-	cout<<"Informe o número:";
+	cout<<"Informe o nÃºmero:";
 	cin>>num;
 	resultado = abs(num);
-	cout<<"O módulo do número é: ";
+	cout<<"O mÃ³dulo do nÃºmero Ã©: ";
 	cout<<resultado<<endl;
 	return 0;
 }

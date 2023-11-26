@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 7. Crie um algoritmo/fluxograma/programa que 
-calcule a soma dos elementos em posições pares 
+calcule a soma dos elementos em posiï¿½ï¿½es pares 
 deum array.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;

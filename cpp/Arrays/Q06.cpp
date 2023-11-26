@@ -6,7 +6,7 @@ calcule e mostre a soma de todos os elementos
 em um array.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;

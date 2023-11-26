@@ -1,12 +1,12 @@
 /*
 ------------------------------------------------
 5. Crie um algoritmo/fluxograma/programa que 
-solicite ao usuário 2 valores, em seguida, 
-troque o valor dessas variáveis e imprima os 
+solicite ao usuï¿½rio 2 valores, em seguida, 
+troque o valor dessas variï¿½veis e imprima os 
 novos valores.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");

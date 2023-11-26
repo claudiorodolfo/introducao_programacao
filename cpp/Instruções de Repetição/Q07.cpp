@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 7. Crie um algoritmo/fluxograma/programa que 
-imprima os números de 1 a 50, pulando os 
-múltiplos de 4 e 5.
+imprima os nï¿½meros de 1 a 50, pulando os 
+mï¿½ltiplos de 4 e 5.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");

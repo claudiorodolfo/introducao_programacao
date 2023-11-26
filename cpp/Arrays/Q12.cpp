@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 12. Crie um algoritmo/fluxograma/programa que 
-verifique e informe se um determinado valor está
+verifique e informe se um determinado valor estï¿½
 presente em um array.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;
@@ -24,9 +24,9 @@ int main() {
 		}	
 			
 	if (estaPresente)
-		cout<<"Está presente!";
+		cout<<"EstÃ¡ presente!";
 	else
-		cout<<"Não está presente!";
+		cout<<"NÃ£o estÃ¡ presente!";
 			
 	return EXIT_SUCCESS;	
 }

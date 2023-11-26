@@ -1,12 +1,12 @@
 /*
 ------------------------------------------------
 8. Crie um algoritmo/fluxograma/programa que 
-leia um número e imprima o seu valor absoluto, 
+leia um nï¿½mero e imprima o seu valor absoluto, 
 independente dele ser positivo ou negativo, sem 
-uso de biblioteca matemática.
+uso de biblioteca matemï¿½tica.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
@@ -19,7 +19,7 @@ int main () {
 		//numero = numero * (-1);
 	}
 			
-	cout<<"O módulo do numero informado é: ";
+	cout<<"O mÃ³dulo do numero informado Ã©: ";
 	cout<<numero;	
 		
 	return 0;

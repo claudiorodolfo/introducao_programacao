@@ -5,7 +5,7 @@ declare um array de inteiros e imprima seus
 elementos. 
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 //#include <vector>
 //#include <array>

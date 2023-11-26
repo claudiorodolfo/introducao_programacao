@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 11. Crie um algoritmo/fluxograma/programa que 
-encontre e escreva a média dos elementos de um
+encontre e escreva a mï¿½dia dos elementos de um
 array.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;
@@ -18,6 +18,6 @@ int main() {
 	for (int i = 0; i < tam; i++)
 		soma += dado[i];
 
-	cout<<"Média:"<<(float)soma/tam<<endl;
+	cout<<"Mï¿½dia:"<<(float)soma/tam<<endl;
 	return EXIT_SUCCESS;	
 }

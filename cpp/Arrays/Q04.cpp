@@ -1,11 +1,11 @@
 /*
 ------------------------------------------------
 4. Crie um algoritmo/fluxograma/programa que 
-encontre o maior e o menor número em um array e 
+encontre o maior e o menor nï¿½mero em um array e 
 imprima-os na tela.
  */
 #include <iostream>
-#include <locale.h>
+#include <clocale>
 #include <cstdlib>
 
 using namespace std;
