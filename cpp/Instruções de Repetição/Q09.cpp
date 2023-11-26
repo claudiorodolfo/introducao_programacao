@@ -13,6 +13,6 @@ int main () {
 		soma = soma + i;
 		//soma += i;
 	}
-	cout<<"A soma �: "<<soma;
+	cout<<"A soma é: "<<soma;
 	return 0;
 }
