@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-11-26 05:30:57 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNjsiMDU6MjY6NTMgIjsyMTAw"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNjsiMDU6MzA6NTcgIjsxOzIyMDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ano" type="Integer" array="False" size=""/>
+            <input variable="ano"/>
+            <if expression="ehBissexto(ano)">
+                <then>
+                    <output expression="&quot;&#201; bissexto&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;N&#227;o &#233; bissexto&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="ehBissexto" type="Boolean" variable="retorno">
+        <parameters>
+            <parameter name="ano" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="retorno" type="Boolean" array="False" size=""/>
+            <if expression="ano % 4 = 0">
+                <then>
+                    <assign variable="retorno" expression="true"/>
+                </then>
+                <else>
+                    <assign variable="retorno" expression="false"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
