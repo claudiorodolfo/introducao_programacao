@@ -12,7 +12,7 @@ normal.
 using namespace std;
 int main () {
 	setlocale(LC_ALL,"Portuguese");
-	float peso, frete = 3.0;
+	float peso, frete = 1.0;
 	cout<<"Informe um peso (kg):";
 	cin>>peso;
     if (peso > 10.0) {
