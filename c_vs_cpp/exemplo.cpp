@@ -7,10 +7,11 @@ int main() {
    int idade;
    float altura;
 
+   cout<<"Informe um nome, idade e altura ";
+   cout<<"separados por espaço:"<<endl;
    cin>>nome>>idade>>altura;
-   cout<<nome <<" tem "<<idade<<" anos\n e mede "<<altura<<" metros."<<endl;	
+   cout<<nome<<" tem "<<idade<<" anos ";
+   cout<<"e mede "<<altura<<" metros."<<endl;	
+
 	return 0;
 }
-
-
-
