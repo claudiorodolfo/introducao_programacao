@@ -5,7 +5,7 @@ a = int(a)
 b = int(b)
 
 if 1 <= a <= b and 1 <= b <= 10000:
-    contador_volta = 1;
+    contador_volta = 1
     resta = 0
     while (resta < a):
         resta = contador_volta * (b-a)
