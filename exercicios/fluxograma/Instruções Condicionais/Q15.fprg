@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 06:51:55 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6NDQ6MDAgIjsyMDkz"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6NTE6NTUgIjszOzIyMTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="preco" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe um pre&#231;o&quot;" newline="True"/>
+            <input variable="preco"/>
+            <if expression="preco &lt; 20">
+                <then>
+                    <output expression="&quot;Pre&#231;o final: &quot; &amp; (preco * 1.4)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Pre&#231;o final: &quot; &amp; (preco * 1.3)" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

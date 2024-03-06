@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 06:49:24 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6NDQ6MDAgIjsyMDkz"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6NDk6MjQgIjsyOzIyMTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="valor" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe um valor&quot;" newline="True"/>
+            <input variable="valor"/>
+            <if expression="valor &gt; 100">
+                <then>
+                    <output expression="&quot;Valor final: &quot; &amp; (valor * 0.95)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Valor final: &quot; &amp; valor" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

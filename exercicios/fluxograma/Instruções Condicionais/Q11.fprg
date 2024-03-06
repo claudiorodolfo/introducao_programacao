@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 06:37:18 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6MzQ6MTMgIjsyMDk2"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6Mzc6MTggIjsxOzIyMTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero1, numero2, numero3" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o primeiro n&#250;mero&quot;" newline="True"/>
+            <input variable="numero1"/>
+            <output expression="&quot;Informe o segundo n&#250;mero&quot;" newline="True"/>
+            <input variable="numero2"/>
+            <output expression="&quot;Informe o terceiro n&#250;mero&quot;" newline="True"/>
+            <input variable="numero3"/>
+            <if expression="numero1 &lt;= numero2 and numero2 &lt;= numero3">
+                <then>
+                    <output expression="&quot;Crescente&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="numero1 &gt;= numero2 and numero2 &gt;= numero3">
+                        <then>
+                            <output expression="&quot;Decrescente&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Fora de ordem&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

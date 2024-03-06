@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 06:21:17 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6MTA6MzcgIjsyMDk2"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6MjE6MTcgIjszOzIyMDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="codigo" type="Integer" array="False" size=""/>
+            <output expression="&quot;Informe o c&#243;digo de um produto:&quot;" newline="True"/>
+            <input variable="codigo"/>
+            <if expression="codigo &gt;= 1 and codigo &lt;= 10">
+                <then>
+                    <output expression="&quot;Alimenta&#231;&#227;o&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="codigo &gt;= 11 and codigo &lt;= 20">
+                <then>
+                    <output expression="&quot;Limpeza&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="codigo &gt;= 21 and codigo &lt;= 30">
+                <then>
+                    <output expression="&quot;Eletr&#244;nicos&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

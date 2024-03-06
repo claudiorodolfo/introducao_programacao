@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 06:33:46 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6MTA6MzcgIjsyMDk2"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6MzM6NDYgIjs3OzIyMTU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="investimento" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe um investimento:&quot;" newline="True"/>
+            <input variable="investimento"/>
+            <if expression="investimento &gt; 10000">
+                <then>
+                    <output expression="&quot;Investimento Alto&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Investimento Baixo&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

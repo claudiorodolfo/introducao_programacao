@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 06:43:46 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6MzQ6MTMgIjsyMDk2"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6NDM6NDYgIjsyOzIyMTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="mes, ano" type="Integer" array="False" size=""/>
+            <output expression="&quot;Informe um mes&quot;" newline="True"/>
+            <input variable="mes"/>
+            <output expression="&quot;Informe um ano&quot;" newline="True"/>
+            <input variable="ano"/>
+            <if expression="mes = 2">
+                <then>
+                    <if expression="ano % 400 = 0 or (ano % 4 = 0 and ano % 100 != 0)">
+                        <then>
+                            <output expression="&quot;29 dias&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;28 dias&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="mes = 1 or mes = 3 or mes = 5 or mes = 7 or mes = 8 or mes = 10 or mes = 12">
+                        <then>
+                            <output expression="&quot;31 dias&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;30 dias&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

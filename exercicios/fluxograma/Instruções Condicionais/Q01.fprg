@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 06:15:47 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6MTA6MzcgIjsyMDk2"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6MTU6NDcgIjsxOzIyMTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="dia" type="Integer" array="False" size=""/>
+            <output expression="&quot;Escreva um n&#250;mero referente ao dia da semana:&quot;" newline="True"/>
+            <input variable="dia"/>
+            <if expression="dia = 1">
+                <then>
+                    <output expression="&quot;Domingo&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="dia = 2">
+                <then>
+                    <output expression="&quot;Segunda-feira&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="dia = 3">
+                <then>
+                    <output expression="&quot;Ter&#231;a-feira&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="dia = 4">
+                <then>
+                    <output expression="&quot;Quarta-feira&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="dia = 5">
+                <then>
+                    <output expression="&quot;Quinta-feira&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="dia = 6">
+                <then>
+                    <output expression="&quot;Sexta-feira&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="dia = 7">
+                <then>
+                    <output expression="&quot;S&#225;bado&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

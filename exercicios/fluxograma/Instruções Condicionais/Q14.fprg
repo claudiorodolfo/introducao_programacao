@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 06:48:46 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6NDQ6MDAgIjsyMDkz"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDY6NDg6NDYgIjsyOzIyMTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="peso, frete" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe um peso&quot;" newline="True"/>
+            <input variable="peso"/>
+            <output expression="&quot;Informe um frete&quot;" newline="True"/>
+            <input variable="frete"/>
+            <if expression="peso &gt; 10">
+                <then>
+                    <output expression="&quot;Frete:&quot; &amp; (frete * 1.2)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Frete:&quot; &amp; frete" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
