@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 05:17:55 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MTM6MTIgIjsyMDkx"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MTc6NTUgIjsxOzIyMTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="anguloGrau, anguloRadiano" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o &#226;ngulo (em graus):&quot;" newline="True"/>
+            <input variable="anguloGrau"/>
+            <assign variable="anguloRadiano" expression="anguloGrau *PI/180"/>
+            <output expression="&quot;Seno: &quot; &amp; sin(anguloRadiano)" newline="True"/>
+            <output expression="&quot;Cosseno: &quot; &amp; cos(anguloRadiano)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

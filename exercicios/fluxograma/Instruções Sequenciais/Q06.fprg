@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 05:12:34 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MDE6MzAgIjsyMDg4"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MTI6MzQgIjsyOzIyMDM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="a, b" type="Real" array="False" size=""/>
+            <declare name="resultado" type="Integer" array="False" size=""/>
+            <output expression="&quot;Informe o dividendo:&quot;" newline="True"/>
+            <input variable="a"/>
+            <output expression="&quot;Informe o divisor:&quot;" newline="True"/>
+            <input variable="b"/>
+            <assign variable="resultado" expression="a/b"/>
+            <output expression="&quot;O quociente da divis&#227;o inteira &#233;: &quot; &amp; resultado" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

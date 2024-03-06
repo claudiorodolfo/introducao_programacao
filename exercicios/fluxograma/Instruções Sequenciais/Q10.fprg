@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 05:23:35 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MTM6MTIgIjsyMDkx"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MjM6MzUgIjs0OzIyMDg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe um numero:&quot;" newline="True"/>
+            <input variable="numero"/>
+            <output expression="&quot;Valor absoluto: &quot; &amp; abs(numero)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
