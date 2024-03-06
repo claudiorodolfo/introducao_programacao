@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 05:32:50 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MzA6MTIgIjsyMDkw"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MzI6NTAgIjsxOzIyMDI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="base, expoente, resultado" type="Integer" array="False" size=""/>
+            <output expression="&quot;Informe a base:&quot;" newline="True"/>
+            <input variable="base"/>
+            <output expression="&quot;Informe o expoente:&quot;" newline="True"/>
+            <input variable="expoente"/>
+            <output expression="base &amp; &quot; elevado a &quot; &amp; expoente &amp; &quot; &#233; &quot; &amp; (base ^ expoente)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

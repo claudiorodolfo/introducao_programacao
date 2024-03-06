@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 05:35:25 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MzA6MTIgIjsyMDkw"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MzU6MjUgIjszOzIyMDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="valor" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe um valor:&quot;" newline="True"/>
+            <input variable="valor"/>
+            <output expression="&quot;A raiz c&#250;bica de &quot; &amp; valor &amp; &quot; &#233; &quot; &amp; valor ^ (1/3)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

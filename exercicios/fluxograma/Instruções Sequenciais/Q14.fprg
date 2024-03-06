@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 05:38:34 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MzA6MTIgIjsyMDkw"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6Mzg6MzQgIjs0OzIyMTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="valor, parteFracionada" type="Real" array="False" size=""/>
+            <declare name="parteInteira" type="Integer" array="False" size=""/>
+            <output expression="&quot;Informe um n&#250;mero fracionado:&quot;" newline="True"/>
+            <input variable="valor"/>
+            <assign variable="parteInteira" expression="valor"/>
+            <assign variable="parteFracionada" expression="valor - parteInteira"/>
+            <output expression="&quot;A parte fracionada do n&#250;mero &#233;:&quot; &amp; parteFracionada" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

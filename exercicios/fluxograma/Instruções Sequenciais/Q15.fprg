@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-06 05:40:28 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MzA6MTIgIjsyMDkw"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6NDA6MjggIjs1OzIyMTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="raio, area" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o raio de uma circunfer&#234;ncia:&quot;" newline="True"/>
+            <input variable="raio"/>
+            <assign variable="area" expression="PI * raio ^ 2"/>
+            <output expression="&quot;A &#225;rea correspondente &#233; de :&quot; &amp; area" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
