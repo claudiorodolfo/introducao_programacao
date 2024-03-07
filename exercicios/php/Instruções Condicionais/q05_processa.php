@@ -7,6 +7,9 @@
 		} else {
 			if ($valor % 400 == 0) {
 				print 'É bissexto';
+			} else {
+				print 'Não é bissexto';
+			}
 		}
 	} else {
 		print 'Não é bissexto';
