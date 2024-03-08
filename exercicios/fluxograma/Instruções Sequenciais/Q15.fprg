@@ -4,17 +4,19 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="asus"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-03-06 05:40:28 "/>
+        <attribute name="saved" value="2024-03-08 01:28:07 "/>
         <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6MzA6MTIgIjsyMDkw"/>
-        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wNjsiMDU6NDA6MjggIjs1OzIyMTA="/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wODsiMDE6Mjg6MDcgIjs2OzIyMTI="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="raio, area" type="Real" array="False" size=""/>
+            <declare name="raio, perimetro, area" type="Real" array="False" size=""/>
             <output expression="&quot;Informe o raio de uma circunfer&#234;ncia:&quot;" newline="True"/>
             <input variable="raio"/>
+            <assign variable="perimetro" expression="2 * pi * raio"/>
             <assign variable="area" expression="PI * raio ^ 2"/>
+            <output expression="&quot;O per&#237;metro correspondente &#233; de :&quot; &amp; perimetro" newline="True"/>
             <output expression="&quot;A &#225;rea correspondente &#233; de :&quot; &amp; area" newline="True"/>
         </body>
     </function>
