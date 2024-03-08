@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-08 08:20:03 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wODsiMDg6MTY6MzMgIjsyMTAy"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wODsiMDg6MjA6MDMgIjsxOzIyMDI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="m, c" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe uma altura na escala de mercurio em cm:&quot;" newline="True"/>
+            <input variable="m"/>
+            <assign variable="c" expression="5*m - 2"/>
+            <output expression="&quot;A temperatura equivalente na escala Celsius &#233;;&quot;" newline="False"/>
+            <output expression="c" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
