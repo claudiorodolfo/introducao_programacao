@@ -38,5 +38,7 @@
 	case 12:
 		print 'Dezembro';
 		break;
+	default:
+		print 'Mês Inválido!';
 	}
 ?>
