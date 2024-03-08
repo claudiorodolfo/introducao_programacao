@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-08 12:05:00 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wODsiMTA6MjU6NTMgIjsyMDk3"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0wODsiMTI6MDU6MDAgIjszOzIxOTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="aleatorio, usuario" type="Integer" array="False" size=""/>
+            <assign variable="aleatorio" expression="Random(10) + 1"/>
+            <input variable="usuario"/>
+            <if expression="usuario = aleatorio">
+                <then>
+                    <output expression="&quot;Parab&#233;ns. Adivinhou!&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Errou. O n&#250;mero escolhido pelo computador foi:&quot; &amp; aleatorio" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
