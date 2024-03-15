@@ -1,21 +1,26 @@
 <?xml version="1.0"?>
-<flowgorithm fileversion="2.11">
+<flowgorithm fileversion="4.0">
     <attributes>
         <attribute name="name" value=""/>
         <attribute name="authors" value="asus"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2023-11-24 12:08:51 "/>
-        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMTI6MDY6NTcgIjsyMDk4"/>
-        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyMy0xMS0yNDsiMTI6MDg6NTEgIjsyOzIyMDM="/>
+        <attribute name="saved" value="2024-03-15 08:07:01 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDc6MzA6NTYgIjsyMTAw"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDg6MDc6MDEgIjszOzIyMDU="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <comment text="1. Crie um algoritmo/fluxograma/programa que imprima os n&#250;meros de 1 a 10."/>
-            <declare name="i" type="Integer" array="False" size=""/>
+            <comment text=""/>
+            <declare name="i, j" type="Integer" array="False" size=""/>
             <for variable="i" start="1" end="10" direction="inc" step="1">
-                <output expression="i &amp; &quot; &quot;" newline="False"/>
+                <output expression="i" newline="True"/>
             </for>
+            <assign variable="j" expression="1"/>
+            <while expression="j &lt;= 10">
+                <output expression="j" newline="True"/>
+                <assign variable="j" expression="j + 1"/>
+            </while>
         </body>
     </function>
 </flowgorithm>
