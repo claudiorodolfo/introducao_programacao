@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-15 08:55:02 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDg6NDI6MTYgIjsyMTAw"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDg6NTU6MDIgIjsxOzIyMDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, j, numero" type="Integer" array="False" size=""/>
+            <output expression="&quot;Informe um n&#250;mero:&quot;" newline="True"/>
+            <input variable="numero"/>
+            <for variable="i" start="1" end="10" direction="inc" step="1">
+                <output expression="numero &amp; &quot; x &quot; &amp; i &amp; &quot; = &quot; &amp; numero * i" newline="True"/>
+            </for>
+            <assign variable="j" expression="1"/>
+            <while expression="j &lt;= 10">
+                <output expression="numero &amp; &quot; x &quot; &amp; j &amp; &quot; = &quot; &amp; (numero * j)" newline="True"/>
+                <assign variable="j" expression="j + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
