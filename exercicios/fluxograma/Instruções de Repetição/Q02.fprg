@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-15 08:19:52 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDg6MDc6MDMgIjsyMDk3"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDg6MTk6NTIgIjsxOzIyMTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, j" type="Integer" array="False" size=""/>
+            <for variable="i" start="10" end="100" direction="inc" step="2">
+                <output expression="i &amp; &quot; &quot;" newline="False"/>
+            </for>
+            <output expression="&quot;&quot;" newline="True"/>
+            <assign variable="j" expression="10"/>
+            <while expression="j &lt;= 100">
+                <output expression="j &amp; &quot; &quot;" newline="False"/>
+                <assign variable="j" expression="j + 2"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
