@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-15 02:58:22 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDk6NDY6NTIgIjsyMTA1"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDI6NTg6MjIgIjsyOzIyMDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, j, soma" type="Integer" array="False" size=""/>
+            <assign variable="soma" expression="0"/>
+            <for variable="i" start="1" end="100" direction="inc" step="1">
+                <assign variable="soma" expression="soma + i"/>
+            </for>
+            <output expression="&quot;Soma:&quot; &amp; soma" newline="True"/>
+            <assign variable="j" expression="1"/>
+            <assign variable="soma" expression="0"/>
+            <while expression="j &lt;= 100">
+                <assign variable="soma" expression="soma + j"/>
+                <assign variable="j" expression="j + 1"/>
+            </while>
+            <output expression="&quot;Soma:&quot; &amp; soma" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
