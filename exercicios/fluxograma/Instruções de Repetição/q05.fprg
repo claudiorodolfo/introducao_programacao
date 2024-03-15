@@ -4,9 +4,9 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="asus"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-03-15 09:40:29 "/>
+        <attribute name="saved" value="2024-03-15 09:46:08 "/>
         <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDk6MDk6NTMgIjsyMTA1"/>
-        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDk6NDA6MjkgIjsxOzIyMTE="/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDk6NDY6MDggIjsyOzIyMTU="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -26,14 +26,13 @@
                                     <then>
                                         <output expression="&quot;Fizz&quot;" newline="True"/>
                                     </then>
-                                    <else>
-                                        <if expression="resto5 = 0">
-                                            <then>
-                                                <output expression="&quot;Buzz&quot;" newline="True"/>
-                                            </then>
-                                            <else/>
-                                        </if>
-                                    </else>
+                                    <else/>
+                                </if>
+                                <if expression="resto5 = 0">
+                                    <then>
+                                        <output expression="&quot;Buzz&quot;" newline="True"/>
+                                    </then>
+                                    <else/>
                                 </if>
                             </else>
                         </if>
