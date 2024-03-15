@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-15 09:40:29 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDk6MDk6NTMgIjsyMTA1"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xNTsiMDk6NDA6MjkgIjsxOzIyMTE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, j, resto3, resto5" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="100" direction="inc" step="1">
+                <assign variable="resto3" expression="i % 3"/>
+                <assign variable="resto5" expression="i % 5"/>
+                <if expression="resto3 = 0 or resto5 = 0">
+                    <then>
+                        <if expression="resto3 = 0 and resto5 = 0">
+                            <then>
+                                <output expression="&quot;Fizz Buzz&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <if expression="resto3 = 0">
+                                    <then>
+                                        <output expression="&quot;Fizz&quot;" newline="True"/>
+                                    </then>
+                                    <else>
+                                        <if expression="resto5 = 0">
+                                            <then>
+                                                <output expression="&quot;Buzz&quot;" newline="True"/>
+                                            </then>
+                                            <else/>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </then>
+                    <else>
+                        <output expression="i" newline="True"/>
+                    </else>
+                </if>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
