@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-18 12:20:43 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xODsiMTI6MTY6MzcgIjsyMTAy"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xODsiMTI6MjA6NDMgIjsxOzIyMDI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, numero" type="Integer" array="False" size=""/>
+            <declare name="primo" type="Boolean" array="False" size=""/>
+            <output expression="&quot;Informe um n&#250;mero&quot;" newline="True"/>
+            <input variable="numero"/>
+            <assign variable="primo" expression="true"/>
+            <for variable="i" start="2" end="numero-1" direction="inc" step="1">
+                <if expression="numero % i = 0">
+                    <then>
+                        <assign variable="primo" expression="false"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <if expression="primo = true">
+                <then>
+                    <output expression="&quot;O n&#250;mero &#233; primo&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;O n&#250;mero n&#227;o &#233; primo&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
