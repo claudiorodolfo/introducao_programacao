@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-18 01:32:27 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xODsiMDE6MTg6NDggIjsyMTA0"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xODsiMDE6MzI6MjcgIjsyOzIyMDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, j" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="50" direction="inc" step="1">
+                <if expression="i % 4 != 0 and i % 5 != 0">
+                    <then>
+                        <output expression="i &amp; &quot; n&#227;o &#233; multiplo de 4 nem de 5&quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <assign variable="j" expression="1"/>
+            <while expression="j &lt;= 50">
+                <if expression="j % 4 != 0 and j % 5 != 0">
+                    <then>
+                        <output expression="j &amp; &quot; n&#227;o &#233; multiplo de 4 nem de 5&quot;" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+                <assign variable="j" expression="j + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-18 01:41:28 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xODsiMDE6MTg6NDggIjsyMTA0"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xODsiMDE6NDE6MjggIjs0OzIyMDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, j, soma" type="Integer" array="False" size=""/>
+            <assign variable="soma" expression="0"/>
+            <for variable="i" start="1" end="10" direction="inc" step="1">
+                <assign variable="soma" expression="soma + (i^2)"/>
+            </for>
+            <output expression="&quot;A soma &#233;:&quot; &amp; soma" newline="True"/>
+            <assign variable="soma" expression="0"/>
+            <assign variable="j" expression="1"/>
+            <while expression="j &lt;= 10">
+                <assign variable="soma" expression="soma + (j^2)"/>
+                <assign variable="j" expression="j + 1"/>
+            </while>
+            <output expression="&quot;A soma &#233;:&quot; &amp; soma" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

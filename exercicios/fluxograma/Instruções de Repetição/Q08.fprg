@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-18 01:38:14 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xODsiMDE6MTg6NDggIjsyMTA0"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0xODsiMDE6Mzg6MTQgIjszOzIyMDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="i, j" type="Integer" array="False" size=""/>
+            <declare name="numero" type="Real" array="False" size=""/>
+            <for variable="i" start="1" end="5" direction="inc" step="1">
+                <output expression="&quot;Informe o &quot; &amp; i &amp; &quot;&#176; numero:&quot;" newline="True"/>
+                <input variable="numero"/>
+                <output expression="numero &amp; &quot;&#178; =&quot; &amp; (numero^2)" newline="True"/>
+            </for>
+            <assign variable="j" expression="1"/>
+            <while expression="j &lt;= 5">
+                <output expression="&quot;Informe o &quot; &amp; j &amp; &quot;&#176; numero:&quot;" newline="True"/>
+                <input variable="numero"/>
+                <output expression="numero &amp; &quot;&#178; =&quot; &amp; (numero^2)" newline="True"/>
+                <assign variable="j" expression="j + 1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
