@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-21 11:28:19 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0yMTsiMTE6MjM6NDUgIjsyMDky"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0yMTsiMTE6Mjg6MTkgIjsxOzIyMDY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ladoA, ladoB, ladoC" type="Real" array="False" size=""/>
+            <input variable="ladoA"/>
+            <input variable="ladoB"/>
+            <input variable="ladoC"/>
+            <if expression="(ladoA + ladoB &gt; ladoC) and (ladoB + ladoC &gt; ladoA) and (ladoA + ladoC &gt; ladoB)">
+                <then>
+                    <output expression="&quot;Forma Tri&#226;ngulo&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;N&#227;o forma tri&#226;ngulo&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
