@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="asus"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-03-21 11:21:25 "/>
+        <attribute name="created" value="YXN1cztBU1VTUEM7MjAyNC0wMy0yMTsiMTA6MzQ6MzEgIjsyMDg4"/>
+        <attribute name="edited" value="YXN1cztBU1VTUEM7MjAyNC0wMy0yMTsiMTE6MjE6MjUgIjsxOzIxOTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nome1, nome2, nome3, primeiro, segundo, terceiro" type="String" array="False" size=""/>
+            <declare name="t1, t2, t3" type="Real" array="False" size=""/>
+            <output expression="&quot;Informe o nome e em seguida o tempo de um atleta:&quot;" newline="True"/>
+            <input variable="nome1"/>
+            <input variable="t1"/>
+            <output expression="&quot;Informe o nome e em seguida o tempo de um atleta:&quot;" newline="True"/>
+            <input variable="nome2"/>
+            <input variable="t2"/>
+            <output expression="&quot;Informe o nome e em seguida o tempo de um atleta:&quot;" newline="True"/>
+            <input variable="nome3"/>
+            <input variable="t3"/>
+            <if expression="t1&gt;t2">
+                <then>
+                    <if expression="t2&gt;t3">
+                        <then>
+                            <assign variable="primeiro" expression="nome3"/>
+                            <assign variable="segundo" expression="nome2"/>
+                            <assign variable="terceiro" expression="nome1"/>
+                        </then>
+                        <else>
+                            <assign variable="primeiro" expression="nome2"/>
+                            <if expression="t1&gt;t3">
+                                <then>
+                                    <assign variable="segundo" expression="nome3"/>
+                                    <assign variable="terceiro" expression="nome1"/>
+                                </then>
+                                <else>
+                                    <assign variable="segundo" expression="nome1"/>
+                                    <assign variable="terceiro" expression="nome3"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="t1&gt;t3">
+                        <then>
+                            <assign variable="primeiro" expression="nome3"/>
+                            <assign variable="segundo" expression="nome1"/>
+                            <assign variable="terceiro" expression="nome2"/>
+                        </then>
+                        <else>
+                            <assign variable="primeiro" expression="nome1"/>
+                            <if expression="t2&gt;t3">
+                                <then>
+                                    <assign variable="segundo" expression="nome3"/>
+                                    <assign variable="terceiro" expression="nome2"/>
+                                </then>
+                                <else>
+                                    <assign variable="segundo" expression="nome2"/>
+                                    <assign variable="terceiro" expression="nome3"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="&quot;Primeiro: &quot; &amp; primeiro" newline="True"/>
+            <output expression="&quot;Segundo: &quot; &amp; segundo" newline="True"/>
+            <output expression="&quot;Terceiro: &quot; &amp; terceiro" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
