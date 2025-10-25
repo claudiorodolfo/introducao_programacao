@@ -6,6 +6,20 @@ import os
 from datetime import date, datetime
 from dotenv import load_dotenv
 
+#date
+#hoje = date(2025, 10, 15)   # ano, mês, dia
+#print(hoje)                 # saída: 2025-10-15
+#hoje = date.today()
+#print(hoje)                 # saída: 2025-10-25 (por exemplo)
+
+#datetime
+#momento = datetime(2025, 10, 25, 14, 30, 0)  # ano, mês, dia, hora, minuto, segundo
+#print(momento)                                # saída: 2025-10-25 14:30:00
+#agora = datetime.now()
+#print(agora)  # saída: 2025-10-25 01:25:37.123456
+#agora = datetime.today()  #(parecido com now(), mas sem fuso horário)
+#print(agora)  # saída: 2025-10-25 01:25:37
+
 # Carrega as variáveis de ambiente do arquivo config.env
 load_dotenv('config.env')
 
