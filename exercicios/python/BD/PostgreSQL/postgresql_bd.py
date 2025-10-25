@@ -60,13 +60,13 @@ def criar_tabelas(cur):
         nome VARCHAR(100) NOT NULL,
         email VARCHAR(150) UNIQUE,
         idade INTEGER CHECK (idade >= 0 AND idade <= 120),
-        altura NUMERIC(3,2),  -- altura em metros (ex: 1.75)
+        altura NUMERIC(3,2),    -- altura em metros (ex: 1.75)
         peso FLOAT,             -- peso em kg
         data_nascimento DATE,
         ativo BOOLEAN DEFAULT TRUE,
         observacoes TEXT,
         telefone CHAR(11),
-        categoria_id BIGINT NOT NULL,
+        categoria_id INTEGER NOT NULL,
         momento_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id),
         FOREIGN KEY (categoria_id) REFERENCES categoria(id)
