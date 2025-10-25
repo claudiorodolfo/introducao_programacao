@@ -55,16 +55,8 @@ brew services list | grep postgresql
 ### 1. Instalar dependências Python
 
 ```bash
-# Criar ambiente virtual
-python3 -m venv venv
-
-# Ativar ambiente virtual
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate     # Windows
-
-# Instalar dependências
-pip install -r requirements.txt
+# Instalar dependências globalmente
+pip3 install -r requirements.txt
 ```
 
 ### 2. Configurar credenciais do banco
@@ -86,7 +78,7 @@ DB_PORT=5432
 ### 3. Executar o programa
 
 ```bash
-python postgresql_bd.py
+python3 postgresql_bd.py
 ```
 
 ## Troubleshooting

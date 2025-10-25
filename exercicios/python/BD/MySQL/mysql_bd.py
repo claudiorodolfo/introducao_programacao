@@ -1,5 +1,5 @@
-#pip3 install mysql-connector-python
-#python3 -m pip install mysql-connector-python
+# Instalar dependências:
+# pip3 install mysql-connector-python python-dotenv
 
 import mysql.connector
 import os

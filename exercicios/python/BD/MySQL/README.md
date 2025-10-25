@@ -68,26 +68,18 @@ brew services list | grep mysql
 ### 1. Instalar dependências Python
 
 ```bash
-# Criar ambiente virtual
-python3 -m venv venv
-
-# Ativar ambiente virtual
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate     # Windows
-
-# Instalar dependências
-pip install -r requirements.txt
+# Instalar dependências diretamente (sem venv)
+pip3 install -r requirements.txt
 ```
 
 ### 2. Configurar credenciais do banco
 
-1. Copie o arquivo de exemplo:
+Copie o arquivo de exemplo e edite com suas credenciais:
 ```bash
 cp config.env.example config.env
 ```
 
-2. Edite o arquivo `config.env` com suas credenciais:
+Edite o arquivo `config.env`:
 ```env
 DB_HOST=localhost
 DB_NAME=exemplo_bd
@@ -99,7 +91,7 @@ DB_PORT=3306
 ### 3. Executar o programa
 
 ```bash
-python mysql_bd.py
+python3 mysql_bd.py
 ```
 
 ## Troubleshooting

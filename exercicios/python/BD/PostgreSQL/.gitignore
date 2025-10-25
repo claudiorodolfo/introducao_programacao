@@ -3,16 +3,6 @@ config.env
 .env
 *.env
 
-# Ambiente virtual Python
-venv/
-env/
-.venv/
-.env/
-
-# Bibliotecas Python instaladas (dependências)
-lib/
-site-packages/
-
 # Arquivos do sistema
 .DS_Store
 __pycache__/
