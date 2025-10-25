@@ -115,21 +115,173 @@ psycopg2.OperationalError: permission denied for database
 
 ### Comandos Úteis
 
+#### Conectar ao PostgreSQL
 ```bash
-# Conectar ao PostgreSQL
+# Conectar como usuário padrão
 psql -h localhost -U postgres
 
-# Listar bancos de dados
-\l
-
 # Conectar a um banco específico
+psql -h localhost -U postgres -d exemplo_bd
+
+# Conectar com porta específica
+psql -h localhost -U postgres -p 5432
+
+# Conectar via socket Unix (Linux/Mac)
+psql -U postgres
+```
+
+#### Comandos dentro do psql
+
+**Navegação e Informações:**
+```sql
+-- Listar todos os bancos de dados
+\l
+\l+
+
+-- Conectar a um banco específico
 \c exemplo_bd
+\c nome_do_banco
 
-# Listar tabelas
+-- Listar tabelas do banco atual
 \dt
+\dt+
 
-# Sair do psql
+-- Listar todas as tabelas (incluindo system tables)
+\dt *
+
+-- Descrever estrutura de uma tabela
+\d nome_da_tabela
+\d+ nome_da_tabela
+
+-- Listar índices
+\di
+
+-- Listar views
+\dv
+
+-- Listar funções
+\df
+
+-- Listar usuários/roles
+\du
+\du+
+
+-- Mostrar informações do banco atual
+\conninfo
+
+-- Mostrar versão do PostgreSQL
+SELECT version();
+```
+
+**Consultas e Dados:**
+```sql
+-- Ver todas as tabelas e suas linhas
+SELECT schemaname, tablename, n_tup_ins as "Inserções", n_tup_upd as "Atualizações", n_tup_del as "Deleções" 
+FROM pg_stat_user_tables;
+
+-- Ver tamanho das tabelas
+SELECT 
+    schemaname,
+    tablename,
+    pg_size_pretty(pg_total_relation_size(schemaname||'.'||tablename)) as size
+FROM pg_tables 
+WHERE schemaname = 'public'
+ORDER BY pg_total_relation_size(schemaname||'.'||tablename) DESC;
+
+-- Ver conexões ativas
+SELECT pid, usename, application_name, client_addr, state, query 
+FROM pg_stat_activity 
+WHERE state = 'active';
+
+-- Ver estatísticas do banco
+SELECT * FROM pg_stat_database WHERE datname = 'exemplo_bd';
+```
+
+**Gerenciamento de Usuários:**
+```sql
+-- Criar usuário
+CREATE USER novo_usuario WITH PASSWORD 'senha_segura';
+
+-- Dar privilégios
+GRANT ALL PRIVILEGES ON DATABASE exemplo_bd TO novo_usuario;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO novo_usuario;
+
+-- Alterar senha
+ALTER USER nome_usuario WITH PASSWORD 'nova_senha';
+
+-- Remover usuário
+DROP USER nome_usuario;
+```
+
+**Backup e Restore:**
+```bash
+# Backup completo do banco
+pg_dump -h localhost -U postgres -d exemplo_bd > backup.sql
+
+# Backup apenas estrutura (schema)
+pg_dump -h localhost -U postgres -d exemplo_bd --schema-only > schema.sql
+
+# Backup apenas dados
+pg_dump -h localhost -U postgres -d exemplo_bd --data-only > dados.sql
+
+# Restaurar backup
+psql -h localhost -U postgres -d exemplo_bd < backup.sql
+
+# Backup com compressão
+pg_dump -h localhost -U postgres -d exemplo_bd | gzip > backup.sql.gz
+
+# Restaurar backup comprimido
+gunzip -c backup.sql.gz | psql -h localhost -U postgres -d exemplo_bd
+```
+
+**Configuração e Monitoramento:**
+```sql
+-- Ver configurações atuais
+SHOW ALL;
+
+-- Ver configuração específica
+SHOW max_connections;
+SHOW shared_buffers;
+
+-- Ver logs de erro recentes (se habilitado)
+SELECT * FROM pg_stat_database;
+
+-- Ver queries lentas (se pg_stat_statements estiver habilitado)
+SELECT query, calls, total_time, mean_time 
+FROM pg_stat_statements 
+ORDER BY total_time DESC 
+LIMIT 10;
+```
+
+**Comandos de Sistema:**
+```bash
+# Iniciar PostgreSQL
+sudo systemctl start postgresql    # Linux
+brew services start postgresql     # macOS
+
+# Parar PostgreSQL
+sudo systemctl stop postgresql     # Linux
+brew services stop postgresql      # macOS
+
+# Reiniciar PostgreSQL
+sudo systemctl restart postgresql  # Linux
+brew services restart postgresql   # macOS
+
+# Ver status do serviço
+sudo systemctl status postgresql   # Linux
+brew services list | grep postgresql  # macOS
+
+# Ver logs do PostgreSQL
+sudo tail -f /var/log/postgresql/postgresql-*.log  # Linux
+tail -f /usr/local/var/log/postgresql.log          # macOS (Homebrew)
+```
+
+**Sair do psql:**
+```sql
+-- Qualquer um destes comandos funciona
 \q
+exit
+quit
 ```
 
 ## Segurança

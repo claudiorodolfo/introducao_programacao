@@ -68,21 +68,196 @@ sqlite3.OperationalError: Could not decode to UTF-8
 
 ### Comandos Úteis
 
+#### **Conexão e Navegação**
 ```bash
 # Conectar ao banco SQLite
 sqlite3 exemplo_bd.db
 
-# Listar tabelas
+# Conectar em modo somente leitura
+sqlite3 -readonly exemplo_bd.db
+
+# Conectar com timeout
+sqlite3 -timeout 30000 exemplo_bd.db
+
+# Sair do SQLite
+.quit
+.exit
+```
+
+#### **Informações do Banco**
+```bash
+# Listar todas as tabelas
 .tables
+
+# Listar tabelas com padrão específico
+.tables pessoa%
 
 # Descrever estrutura de uma tabela
 .schema pessoa
 
-# Ver dados de uma tabela
+# Descrever todas as tabelas
+.schema
+
+# Mostrar informações do banco
+.database
+
+# Mostrar configurações atuais
+.show
+```
+
+#### **Consultas e Dados**
+```sql
+-- Ver dados de uma tabela
 SELECT * FROM pessoa;
 
-# Sair do SQLite
-.quit
+-- Contar registros
+SELECT COUNT(*) FROM pessoa;
+
+-- Ver primeiras 10 linhas
+SELECT * FROM pessoa LIMIT 10;
+
+-- Ver estrutura da tabela com dados
+PRAGMA table_info(pessoa);
+
+-- Ver índices da tabela
+PRAGMA index_list(pessoa);
+
+-- Ver estatísticas da tabela
+ANALYZE pessoa;
+SELECT * FROM sqlite_stat1 WHERE tbl='pessoa';
+```
+
+#### **Configurações e Performance**
+```sql
+-- Ver configurações atuais
+PRAGMA compile_options;
+
+-- Configurar modo WAL (melhor concorrência)
+PRAGMA journal_mode=WAL;
+
+-- Configurar cache
+PRAGMA cache_size=10000;
+
+-- Configurar timeout
+PRAGMA busy_timeout=30000;
+
+-- Otimizar banco
+PRAGMA optimize;
+
+-- Verificar integridade
+PRAGMA integrity_check;
+
+-- Verificar integridade rápida
+PRAGMA quick_check;
+```
+
+#### **Índices e Otimização**
+```sql
+-- Criar índice simples
+CREATE INDEX idx_nome ON pessoa(nome);
+
+-- Criar índice único
+CREATE UNIQUE INDEX idx_email ON pessoa(email);
+
+-- Criar índice composto
+CREATE INDEX idx_nome_categoria ON pessoa(nome, categoria_id);
+
+-- Ver índices existentes
+.indices pessoa
+
+-- Analisar query (ver plano de execução)
+EXPLAIN QUERY PLAN SELECT * FROM pessoa WHERE nome = 'Ana';
+
+-- Analisar query detalhada
+EXPLAIN SELECT * FROM pessoa WHERE nome = 'Ana';
+```
+
+#### **Backup e Restore**
+```bash
+# Backup completo do banco
+sqlite3 exemplo_bd.db ".backup backup_exemplo_bd.db"
+
+# Backup de tabelas específicas
+sqlite3 exemplo_bd.db ".dump pessoa categoria" > backup_tabelas.sql
+
+# Dump completo (SQL)
+sqlite3 exemplo_bd.db ".dump" > backup_completo.sql
+
+# Dump apenas estrutura (sem dados)
+sqlite3 exemplo_bd.db ".schema" > estrutura.sql
+
+# Restaurar de backup
+sqlite3 novo_banco.db < backup_completo.sql
+```
+
+#### **Importação e Exportação**
+```bash
+# Exportar para CSV
+sqlite3 -header -csv exemplo_bd.db "SELECT * FROM pessoa;" > pessoas.csv
+
+# Importar de CSV
+sqlite3 exemplo_bd.db ".mode csv" ".import pessoas.csv nova_tabela"
+
+# Exportar para JSON (requer extensão)
+sqlite3 exemplo_bd.db "SELECT json_group_array(json_object('id', id, 'nome', nome)) FROM pessoa;"
+```
+
+#### **Manutenção e Limpeza**
+```sql
+-- Vacuum (reorganizar banco, reduzir tamanho)
+VACUUM;
+
+-- Vacuum para arquivo específico
+VACUUM INTO novo_banco.db;
+
+-- Reindexar todos os índices
+REINDEX;
+
+-- Reindexar índice específico
+REINDEX idx_nome;
+
+-- Verificar e reparar
+PRAGMA integrity_check;
+PRAGMA foreign_key_check;
+```
+
+#### **Debugging e Troubleshooting**
+```sql
+-- Ver logs de erro
+PRAGMA error_log;
+
+-- Ver estatísticas de uso
+PRAGMA stats;
+
+-- Ver informações de versão
+SELECT sqlite_version();
+
+-- Ver configurações de compilação
+PRAGMA compile_options;
+
+-- Ver tamanho do banco
+SELECT page_count * page_size as size FROM pragma_page_count(), pragma_page_size();
+```
+
+#### **Comandos de Formatação**
+```bash
+# Configurar modo de saída
+.mode column
+.mode csv
+.mode json
+.mode table
+
+# Configurar separador
+.separator ","
+
+# Configurar headers
+.headers on
+
+# Configurar largura das colunas
+.width 10 20 15
+
+# Configurar null value
+.nullvalue NULL
 ```
 
 ## Diferenças entre SQLite e outros SGBDs

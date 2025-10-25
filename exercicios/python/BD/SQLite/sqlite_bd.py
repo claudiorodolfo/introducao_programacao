@@ -1,5 +1,4 @@
 import sqlite3
-from datetime import date, datetime
 
 def conectar_banco():
     """Conecta ao banco de dados SQLite"""
@@ -10,6 +9,12 @@ def conectar_banco():
     # Configurar para retornar dicionários nas consultas
     conn.row_factory = sqlite3.Row
     #print(linha["nome"])   # em vez de linha[0]
+    
+    #Isso instrui o SQLite a verificar e aplicar as restrições de integridade referencial, como:
+    #não permitir excluir um registro pai que tem filhos;
+    #impedir inserções com valores de chave estrangeira inexistentes;
+    #aplicar comportamentos ON DELETE CASCADE, etc.
+    conn.execute("PRAGMA foreign_keys = ON")
     return conn
 
 def criar_tabelas(cur):
@@ -183,7 +188,7 @@ def mostrar_relacionamentos(cur):
     print("Pessoa | Categoria")
     print("-" * 30)
     for linha in cur.fetchall():
-        print(f"{linha["pessoa"]} | {linha["categoria"]}")
+        print(f"{linha["nome"]} | {linha["categoria"]}")
 
 def exemplo_sqlite():
     """Função principal que executa todas as operações"""
