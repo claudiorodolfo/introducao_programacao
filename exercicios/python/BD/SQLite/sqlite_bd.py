@@ -9,6 +9,7 @@ def conectar_banco():
     conn = sqlite3.connect(db_path)
     # Configurar para retornar dicionários nas consultas
     conn.row_factory = sqlite3.Row
+    #print(linha["nome"])   # em vez de linha[0]
     return conn
 
 def criar_tabelas(cur):
@@ -182,7 +183,7 @@ def mostrar_relacionamentos(cur):
     print("Pessoa | Categoria")
     print("-" * 30)
     for linha in cur.fetchall():
-        print(f"{linha[0]} | {linha[1]}")
+        print(f"{linha["pessoa"]} | {linha["categoria"]}")
 
 def exemplo_sqlite():
     """Função principal que executa todas as operações"""
