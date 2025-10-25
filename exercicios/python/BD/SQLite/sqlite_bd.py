@@ -100,8 +100,8 @@ def mostrar_dados_antes_update(cur):
     
     print("ID | Nome | Idade | Categoria")
     print("-" * 50)
-    for row in cur.fetchall():
-        print(f"{row[0]} | {row[1]} | {row[2]} | {row[3]}")
+    for linha in cur.fetchall():
+        print(f"{linha[0]} | {linha[1]} | {linha[2]} | {linha[3]}")
 
 def atualizar_dados(cur):
     """Atualiza dados na tabela pessoa"""
@@ -129,9 +129,9 @@ def mostrar_dados_apos_update(cur):
     
     print("ID | Nome | Idade | Categoria | Ativo")
     print("-" * 50)
-    for row in cur.fetchall():
-        status = "Sim" if row[4] else "Não"
-        print(f"{row[0]} | {row[1]} | {row[2]} | {row[3]} | {status}")
+    for linha in cur.fetchall():
+        status = "Sim" if linha[4] else "Não"
+        print(f"{linha[0]} | {linha[1]} | {linha[2]} | {linha[3]} | {status}")
 
 def mostrar_tipos_dados(cur):
     """Demonstra diferentes tipos de dados SQL"""
@@ -153,17 +153,17 @@ def mostrar_tipos_dados(cur):
     WHERE nome = 'Ana Silva';
     """)
     
-    row = cur.fetchone()
-    if row:
-        print(f"TEXT: Nome = {row[0]}")
-        print(f"TEXT: Email = {row[1]}")
-        print(f"INTEGER: Idade = {row[2]}")
-        print(f"REAL: Altura = {row[3]} metros")
-        print(f"REAL: Peso = {row[4]:.2f} kg")
-        print(f"TEXT: Data Nascimento = {row[5]}")
-        print(f"TEXT: Momento Cadastro = {row[6]}")
-        print(f"INTEGER: Ativo = {row[7]} ({'Sim' if row[7] else 'Não'})")
-        print(f"TEXT: Observações = {row[8]}")
+    linha = cur.fetchone()
+    if linha:
+        print(f"TEXT: Nome = {linha[0]}")
+        print(f"TEXT: Email = {linha[1]}")
+        print(f"INTEGER: Idade = {linha[2]}")
+        print(f"REAL: Altura = {linha[3]} metros")
+        print(f"REAL: Peso = {linha[4]:.2f} kg")
+        print(f"TEXT: Data Nascimento = {linha[5]}")
+        print(f"TEXT: Momento Cadastro = {linha[6]}")
+        print(f"INTEGER: Ativo = {linha[7]} ({'Sim' if linha[7] else 'Não'})")
+        print(f"TEXT: Observações = {linha[8]}")
 
 def mostrar_relacionamentos(cur):
     """Demonstra relacionamentos entre tabelas"""
@@ -181,8 +181,8 @@ def mostrar_relacionamentos(cur):
     
     print("Pessoa | Categoria")
     print("-" * 30)
-    for row in cur.fetchall():
-        print(f"{row[0]} | {row[1]}")
+    for linha in cur.fetchall():
+        print(f"{linha[0]} | {linha[1]}")
 
 def exemplo_sqlite():
     """Função principal que executa todas as operações"""
