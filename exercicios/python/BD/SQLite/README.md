@@ -31,38 +31,15 @@ sqlite3 exemplo_bd.db
 
 ## Configuração do Projeto
 
-### 1. Instalar dependências Python
+### 1. Executar o programa
 
-```bash
-# Criar ambiente virtual
-python3 -m venv venv
-
-# Ativar ambiente virtual
-source venv/bin/activate  # Linux/Mac
-# ou
-venv\Scripts\activate     # Windows
-
-# Instalar dependências
-pip install -r requirements.txt
-```
-
-### 2. Configurar arquivo de banco
-
-1. Copie o arquivo de exemplo:
-```bash
-cp config.env.example config.env
-```
-
-2. Edite o arquivo `config.env` com o caminho do banco:
-```env
-DB_PATH=exemplo_bd.db
-```
-
-### 3. Executar o programa
+Como o SQLite é um banco embarcado e não precisa de configurações especiais, você pode executar diretamente:
 
 ```bash
 python sqlite_bd.py
 ```
+
+O programa criará automaticamente o arquivo `exemplo_bd.db` no mesmo diretório.
 
 ## Troubleshooting
 
@@ -170,11 +147,9 @@ SELECT * FROM pessoa;
 
 ## Segurança
 
-- O arquivo `config.env` está no `.gitignore` e não será commitado
-- Use o arquivo `config.env.example` como template para outros desenvolvedores
-- Nunca commite credenciais reais no repositório
-- Para produção, use caminhos seguros e backups regulares
 - SQLite não tem autenticação nativa - proteja o arquivo do banco
+- Para produção, use caminhos seguros e backups regulares
+- Nunca commite arquivos de banco de dados no repositório
 
 ## Performance
 
