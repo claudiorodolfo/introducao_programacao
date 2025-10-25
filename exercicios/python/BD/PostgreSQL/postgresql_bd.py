@@ -59,6 +59,23 @@ def criar_tabelas(cur):
     );
     """)
 
+def limpar_dados(cur):
+    """Remove todos os dados das tabelas para evitar duplicação"""
+    print("Limpando dados existentes...")
+    
+    # Remove dados da tabela pessoa primeiro (devido à foreign key)
+    cur.execute("DELETE FROM pessoa;")
+    print("✓ Dados da tabela 'pessoa' removidos")
+    
+    # Remove dados da tabela categoria
+    cur.execute("DELETE FROM categoria;")
+    print("✓ Dados da tabela 'categoria' removidos")
+    
+    # Reseta os contadores de ID (SERIAL)
+    cur.execute("ALTER SEQUENCE pessoa_id_seq RESTART WITH 1;")
+    cur.execute("ALTER SEQUENCE categoria_id_seq RESTART WITH 1;")
+    print("✓ Contadores de ID resetados")
+
 def inserir_categorias(cur):
     """Insere dados na tabela categoria"""
     categorias = [
@@ -200,6 +217,10 @@ def exemplo_postgresql():
         criar_tabelas(cur)
         conn.commit()
         print("✓ Tabelas criadas com sucesso!")
+        
+        # Limpar dados existentes para evitar duplicação
+        limpar_dados(cur)
+        conn.commit()
         
         # Inserir dados
         print("\nInserindo dados...")

@@ -41,6 +41,19 @@ def criar_tabelas(cur):
     );
     """)
 
+def limpar_dados(cur):
+    """Remove todos os dados das tabelas antes de inserir novos"""
+    print("Limpando dados existentes...")
+    
+    # Deletar dados das tabelas (respeitando ordem das foreign keys)
+    cur.execute("DELETE FROM pessoa;")
+    cur.execute("DELETE FROM categoria;")
+    
+    # Resetar os contadores de AUTOINCREMENT
+    cur.execute("DELETE FROM sqlite_sequence WHERE name IN ('pessoa', 'categoria');")
+    
+    print("✓ Dados limpos com sucesso!")
+
 def inserir_categorias(cur):
     """Insere dados na tabela categoria"""
     categorias = [
@@ -182,6 +195,10 @@ def exemplo_sqlite():
         criar_tabelas(cur)
         conn.commit()
         print("✓ Tabelas criadas com sucesso!")
+        
+        # Limpar dados existentes antes de inserir novos
+        limpar_dados(cur)
+        conn.commit()
         
         # Inserir dados
         print("\nInserindo dados...")

@@ -60,6 +60,23 @@ def criar_tabelas(cur):
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
     """)
 
+def limpar_dados(cur):
+    """Remove todos os dados das tabelas antes de inserir novos"""
+    print("Limpando dados existentes...")
+    
+    # Remove dados da tabela pessoa primeiro (devido à foreign key)
+    cur.execute("DELETE FROM pessoa;")
+    print("✓ Dados da tabela pessoa removidos")
+    
+    # Remove dados da tabela categoria
+    cur.execute("DELETE FROM categoria;")
+    print("✓ Dados da tabela categoria removidos")
+    
+    # Reset dos auto_increment
+    cur.execute("ALTER TABLE pessoa AUTO_INCREMENT = 1;")
+    cur.execute("ALTER TABLE categoria AUTO_INCREMENT = 1;")
+    print("✓ Auto increment resetado")
+
 def inserir_categorias(cur):
     """Insere dados na tabela categoria"""
     categorias = [
@@ -201,6 +218,10 @@ def exemplo_mysql():
         criar_tabelas(cur)
         conn.commit()
         print("✓ Tabelas criadas com sucesso!")
+        
+        # Limpar dados existentes
+        limpar_dados(cur)
+        conn.commit()
         
         # Inserir dados
         print("\nInserindo dados...")
