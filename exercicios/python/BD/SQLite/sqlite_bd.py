@@ -1,17 +1,10 @@
-#pip3 install python-dotenv
-#python3 -m pip install python-dotenv
-
 import sqlite3
-import os
 from datetime import date, datetime
-from dotenv import load_dotenv
-
-# Carrega as variáveis de ambiente do arquivo config.env
-load_dotenv('config.env')
 
 def conectar_banco():
     """Conecta ao banco de dados SQLite"""
-    db_path = os.getenv('DB_PATH', 'exemplo_bd.db')
+    # Nome simples do arquivo de banco de dados
+    db_path = 'exemplo_bd.db'
     
     conn = sqlite3.connect(db_path)
     # Configurar para retornar dicionários nas consultas
