@@ -79,9 +79,9 @@ brew services list | grep postgresql
 
 ```
 PostgreSQL/
-├── postgresql_bd.py          # Script principal do banco
-├── requirements.txt          # Dependências Python
-├── config.env.example       # Template de configuração
+├── postgresql_bd.py        # Script principal do banco
+├── requirements.txt        # Dependências Python
+├── config.env.example      # Template de configuração
 ├── config.env              # Suas credenciais (não commitado)
 ├── README.md               # Este arquivo
 └── .gitignore              # Ignora arquivos sensíveis
@@ -724,8 +724,6 @@ Se encontrar problemas:
 
 ---
 
-**🎉 Parabéns!** Seu ambiente PostgreSQL está configurado e pronto para desenvolvimento!
-
 ## Segurança
 
 - O arquivo `config.env` está no `.gitignore` e não será commitado
@@ -733,3 +731,5 @@ Se encontrar problemas:
 - Nunca commite credenciais reais no repositório
 - Para produção, use variáveis de ambiente do sistema ou serviços de gerenciamento de secrets
 - Configure o PostgreSQL com senhas fortes e usuários específicos para cada aplicação
+
+**🎉 Parabéns!** Seu ambiente PostgreSQL está configurado e pronto para desenvolvimento!

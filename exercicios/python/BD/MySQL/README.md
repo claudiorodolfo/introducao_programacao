@@ -91,9 +91,9 @@ brew services list | grep mysql
 
 ```
 MySQL/
-├── mysql_bd.py              # Script principal do banco
-├── requirements.txt          # Dependências Python
-├── config.env.example       # Template de configuração
+├── mysql_bd.py             # Script principal do banco
+├── requirements.txt        # Dependências Python
+├── config.env.example      # Template de configuração
 ├── config.env              # Suas credenciais (não commitado)
 ├── README.md               # Este arquivo
 └── .gitignore              # Ignora arquivos sensíveis
@@ -821,5 +821,13 @@ Se encontrar problemas:
 4. Verifique as permissões do usuário
 
 ---
+
+## Segurança
+
+- O arquivo `config.env` está no `.gitignore` e não será commitado
+- Use o arquivo `config.env.example` como template para outros desenvolvedores
+- Nunca commite credenciais reais no repositório
+- Para produção, use variáveis de ambiente do sistema ou serviços de gerenciamento de secrets
+- Configure o MySQL com senhas fortes e usuários específicos para cada aplicação
 
 **🎉 Parabéns!** Seu ambiente MySQL está configurado e pronto para desenvolvimento!
