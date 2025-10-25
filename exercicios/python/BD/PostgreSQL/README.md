@@ -16,7 +16,7 @@ brew services start postgresql   # macOS
 # 3. Criar banco
 sudo -u postgres psql -c "CREATE DATABASE exemplo_bd;"
 
-# 4. Instalar dependências Python
+# 4. Instalar dependências Python (--break-system-packages é específico de algumas distros, ou seja, não é necessário em todos os sistemas)
 pip3 install --break-system-packages -r requirements.txt
 
 # 5. Configurar credenciais
@@ -160,7 +160,7 @@ psycopg2.OperationalError: FATAL: password authentication failed
 # Parar PostgreSQL
 sudo systemctl stop postgresql
 
-# Iniciar em modo single-user
+# Iniciar em modo single-user (atenção, este caminho pode variar conforme a distribuição)
 sudo -u postgres postgres --single -D /var/lib/postgresql/data
 
 # Conectar e alterar senha
@@ -487,7 +487,7 @@ SHOW max_connections;          -- Conexões simultâneas
 SHOW work_mem;                 -- Memória para operações
 SHOW maintenance_work_mem;      -- Memória para manutenção
 
--- Configurações recomendadas para desenvolvimento
+-- Configurações recomendadas para desenvolvimento (atenção, em algumas versões pode exige permissões de superusuário)
 ALTER SYSTEM SET shared_buffers = '128MB';
 ALTER SYSTEM SET work_mem = '4MB';
 ALTER SYSTEM SET maintenance_work_mem = '64MB';

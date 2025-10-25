@@ -104,7 +104,7 @@ MySQL/
 ### 1. Instalar dependências Python
 
 ```bash
-# Instalar dependências diretamente (sem venv)
+# Instalar dependências do Python (--break-system-packages é específico de algumas distros, ou seja, não é necessário em todos os sistemas)
 pip3 install --break-system-packages -r requirements.txt
 ```
 
