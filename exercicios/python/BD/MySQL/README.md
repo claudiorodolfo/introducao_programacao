@@ -16,7 +16,7 @@ sudo mysql_secure_installation
 mysql -u root -p -e "CREATE DATABASE exemplo_bd;"
 
 # 4. Instalar dependências Python
-pip3 install -r requirements.txt
+pip3 install --break-system-packages -r requirements.txt
 
 # 5. Configurar credenciais
 cp config.env.example config.env
@@ -105,7 +105,7 @@ MySQL/
 
 ```bash
 # Instalar dependências diretamente (sem venv)
-pip3 install -r requirements.txt
+pip3 install --break-system-packages -r requirements.txt
 ```
 
 ### 2. Configurar credenciais do banco
