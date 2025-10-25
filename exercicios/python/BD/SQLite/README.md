@@ -265,7 +265,7 @@ SELECT page_count * page_size as size FROM pragma_page_count(), pragma_page_size
 ### Tipos de Dados
 - **SQLite**: `INTEGER` vs MySQL `INT` vs PostgreSQL `INTEGER`
 - **SQLite**: `TEXT` vs MySQL `VARCHAR` vs PostgreSQL `VARCHAR`
-- **SQLite**: `REAL` vs MySQL `FLOAT` vs PostgreSQL `REAL`
+- **SQLite**: `REAL` vs MySQL `FLOAT` vs PostgreSQL `FLOAT`
 - **SQLite**: `INTEGER` para BOOLEAN vs MySQL `BOOLEAN` vs PostgreSQL `BOOLEAN`
 
 ### Sintaxe SQL
