@@ -15,7 +15,7 @@ sudo mysql_secure_installation
 # 3. Criar banco
 mysql -u root -p -e "CREATE DATABASE exemplo_bd;"
 
-# 4. Instalar dependências Python
+# 4. Instalar dependências Python (--break-system-packages é específico de algumas distros, ou seja, não é necessário em todos os sistemas)
 pip3 install --break-system-packages -r requirements.txt
 
 # 5. Configurar credenciais

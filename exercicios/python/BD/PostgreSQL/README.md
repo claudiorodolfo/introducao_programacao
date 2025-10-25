@@ -92,7 +92,7 @@ PostgreSQL/
 ### 1. Instalar dependências Python
 
 ```bash
-# Instalar dependências Python
+# Instalar dependências Python (--break-system-packages é específico de algumas distros, ou seja, não é necessário em todos os sistemas)
 pip3 install --break-system-packages -r requirements.txt
 ```
 
