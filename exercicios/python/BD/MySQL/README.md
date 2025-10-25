@@ -584,7 +584,8 @@ EXPLAIN SELECT * FROM pessoa WHERE nome = 'João';
 -- Verificar configurações importantes
 SHOW VARIABLES LIKE 'innodb_buffer_pool_size';    -- Cache de dados
 SHOW VARIABLES LIKE 'max_connections';            -- Conexões simultâneas
-SHOW VARIABLES LIKE 'query_cache_size';           -- Cache de queries
+SHOW VARIABLES LIKE 'query_cache_size';           -- Cache de queries (depreciado a partir do MySQL 8.0+)
+SHOW VARIABLES LIKE 'have_query_cache';           -- Cache de queries
 SHOW VARIABLES LIKE 'innodb_log_file_size';       -- Tamanho do log
 
 -- Configurações recomendadas para desenvolvimento
