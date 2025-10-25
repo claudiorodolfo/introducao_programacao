@@ -84,7 +84,37 @@ def inserir_pessoas(cur):
         ("Carla Souza", "carla.souza@email.com", 22, 1.70, 62.0,
          "2001-12-03", 0, "Técnica em Informática", "71977777777", 3),
         ("Diego Santos", "diego.santos@email.com", 28, 1.75, 70.5, 
-         "1995-03-10", 0, "Professor de Física", "71966666666", 1)
+         "1995-03-10", 0, "Professor de Física", "71966666666", 1),
+        ("João da Silva", "joao.silva@email.com", 20, 1.75, 70.5,
+         "2002-01-01", 1, "Aluno de Informática", "71955555555", 3),
+        ("Maria Oliveira", "maria.oliveira@email.com", 23, 1.60, 55.0,
+         "1999-07-15", 1, "Aluna de Engenharia", "71944444444", 2),
+        ("Pedro Santos", "pedro.santos@email.com", 27, 1.85, 80.0,
+         "1996-02-20", 1, "Aluno de Matemática", "71933333333", 3),
+        ("Lucas Oliveira", "lucas.oliveira@email.com", 21, 1.72, 68.5,
+         "2001-09-10", 1, "Aluno de Física", "71922222222", 2),
+        ("Julia Santos", "julia.santos@email.com", 24, 1.68, 60.0,
+         "1998-04-25", 1, "Aluna de Química", "71911111111", 1),
+        ("Rafael Oliveira", "rafael.oliveira@email.com", 26, 1.80, 75.0,
+         "1997-06-30", 1, "Aluno de História", "71900000000", 2),
+        ("Camila Santos", "camila.santos@email.com", 29, 1.75, 65.5,
+         "1994-09-12", 1, "Aluna de Geografia", "71899999999", 1),
+        ("Gustavo Oliveira", "gustavo.oliveira@email.com", 22, 1.70, 62.0,
+         "2000-11-25", 1, "Aluno de Inglês", "71888888888", 2),
+        ("Larissa Santos", "larissa.santos@email.com", 25, 1.65, 58.5,
+         "1998-02-18", 1, "Aluna de Espanhol", "71877777777", 3),
+        ("Bruno Oliveira", "bruno.oliveira@email.com", 28, 1.85, 75.0,
+         "1995-05-10", 1, "Aluno de Física", "71866666666", 2),
+        ("Letícia Santos", "leticia.santos@email.com", 21, 1.72, 68.5,
+         "2001-08-05", 1, "Aluna de Química", "71855555555", 3),
+        ("Ricardo Oliveira", "ricardo.oliveira@email.com", 24, 1.68, 60.0,
+         "1998-03-15", 1, "Aluno de História", "71844444444", 3),
+        ("Amanda Santos", "amanda.santos@email.com", 27, 1.80, 75.0,
+         "1995-07-22", 1, "Aluna de Geografia", "71833333333", 2),
+        ("Felipe Oliveira", "felipe.oliveira@email.com", 20, 1.75, 70.5,
+         "2002-04-10", 1, "Aluno de Inglês", "71822222222", 1),
+        ("Fernanda Santos", "fernanda.santos@email.com", 23, 1.60, 55.0,
+         "1999-06-25", 1, "Aluna de Espanhol", "71811111111", 2)
     ]
     
     sql_insert = """
@@ -94,20 +124,6 @@ def inserir_pessoas(cur):
     """
     cur.executemany(sql_insert, pessoas)
 
-def mostrar_dados_antes_update(cur):
-    """Mostra os dados antes de fazer UPDATE"""
-    print("=== DADOS ANTES DO UPDATE ===")
-    cur.execute("""
-    SELECT p.id, p.nome, p.idade, c.nome as categoria
-    FROM pessoa p, categoria c 
-    WHERE p.categoria_id = c.id
-    ORDER BY p.id;
-    """)
-    
-    print("ID | Nome | Idade | Categoria")
-    print("-" * 50)
-    for linha in cur.fetchall():
-        print(f"{linha[0]} | {linha[1]} | {linha[2]} | {linha[3]}")
 
 def atualizar_dados(cur):
     """Atualiza dados na tabela pessoa"""
@@ -123,21 +139,21 @@ def atualizar_dados(cur):
     cur.execute(sql_update, ("Carla Souza",))
     print("✓ Carla foi ativada")
 
-def mostrar_dados_apos_update(cur):
+def mostrar_dados(cur):
     """Mostra os dados após fazer UPDATE"""
     print("\n=== DADOS APÓS O UPDATE ===")
     cur.execute("""
     SELECT p.id, p.nome, p.idade, c.nome as categoria, p.ativo
-    FROM pessoa p 
-    JOIN categoria c ON p.categoria_id = c.id
+    FROM pessoa p,categoria c 
+    WHERE p.categoria_id = c.id
     ORDER BY p.id;
     """)
     
     print("ID | Nome | Idade | Categoria | Ativo")
     print("-" * 50)
     for linha in cur.fetchall():
-        status = "Sim" if linha[4] else "Não"
-        print(f"{linha[0]} | {linha[1]} | {linha[2]} | {linha[3]} | {status}")
+        status = "Sim" if linha["ativo"] else "Não"
+        print(f"{linha["id"]} | {linha["nome"]} | {linha["idade"]} | {linha["categoria"]} | {status}")
 
 def mostrar_tipos_dados(cur):
     """Demonstra diferentes tipos de dados SQL"""
@@ -214,14 +230,14 @@ def exemplo_sqlite():
         print("✓ Dados inseridos com sucesso!")
         
         # Mostrar dados antes do update
-        mostrar_dados_antes_update(cur)
+        mostrar_dados(cur)
         
         # Atualizar dados
         atualizar_dados(cur)
         conn.commit()
         
         # Mostrar dados após update
-        mostrar_dados_apos_update(cur)
+        mostrar_dados(cur)
         
         # Demonstrar tipos de dados
         mostrar_tipos_dados(cur)
