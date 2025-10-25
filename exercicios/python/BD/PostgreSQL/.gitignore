@@ -1,10 +1,6 @@
-# Para arquivos compilados
-*.exe
-*.json
-
 # Arquivos de configuração com credenciais sensíveis
-.env
 config.env
+.env
 *.env
 
 # Ambiente virtual Python
@@ -13,5 +9,12 @@ env/
 .venv/
 .env/
 
+# Bibliotecas Python instaladas (dependências)
+lib/
+site-packages/
+
 # Arquivos do sistema
 .DS_Store
+__pycache__/
+*.pyc
+*.pyo
