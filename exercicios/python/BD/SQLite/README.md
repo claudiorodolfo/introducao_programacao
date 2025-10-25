@@ -301,7 +301,7 @@ SELECT page_count * page_size as size FROM pragma_page_count(), pragma_page_size
 - Baixo consumo de recursos
 
 ### 4. **Confiabilidade**
-- Transações ACID
+- Transações ACID (Atomicidade, Consistência, Isolamento e Durabilidade)
 - Resistente a falhas
 - Usado em produção por grandes empresas
 
