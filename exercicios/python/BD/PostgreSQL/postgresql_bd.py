@@ -154,21 +154,6 @@ def inserir_pessoas(cur):
     """
     cur.executemany(sql_insert, pessoas)
 
-def mostrar_dados_antes_update(cur):
-    """Mostra os dados antes de fazer UPDATE"""
-    print("=== DADOS ANTES DO UPDATE ===")
-    cur.execute("""
-    SELECT p.id, p.nome, p.idade, c.nome as categoria
-    FROM pessoa p,categoria c 
-    WHERE p.categoria_id = c.id
-    ORDER BY p.id;
-    """)
-    
-    print("ID | Nome | Idade | Categoria")
-    print("-" * 50)
-    for row in cur.fetchall():
-        print(f"{row[0]} | {row[1]} | {row[2]} | {row[3]}")
-
 def atualizar_dados(cur):
     """Atualiza dados na tabela pessoa"""
     print("\n=== ATUALIZANDO DADOS ===")
@@ -183,13 +168,13 @@ def atualizar_dados(cur):
     cur.execute(sql_update, ("Carla Souza",))
     print("✓ Carla foi ativada")
 
-def mostrar_dados_apos_update(cur):
+def mostrar_dados(cur):
     """Mostra os dados após fazer UPDATE"""
     print("\n=== DADOS APÓS O UPDATE ===")
     cur.execute("""
     SELECT p.id, p.nome, p.idade, c.nome as categoria, p.ativo
-    FROM pessoa p 
-    JOIN categoria c ON p.categoria_id = c.id
+    FROM pessoa p, categoria c 
+    WHERE p.categoria_id = c.id
     ORDER BY p.id;
     """)
     
@@ -274,14 +259,14 @@ def exemplo_postgresql():
         print("✓ Dados inseridos com sucesso!")
         
         # Mostrar dados antes do update
-        mostrar_dados_antes_update(cur)
+        mostrar_dados(cur)
         
         # Atualizar dados
         atualizar_dados(cur)
         conn.commit()
         
         # Mostrar dados após update
-        mostrar_dados_apos_update(cur)
+        mostrar_dados(cur)
         
         # Demonstrar tipos de dados
         mostrar_tipos_dados(cur)
