@@ -67,7 +67,7 @@ def criar_tabelas(cur):
         ativo BOOLEAN DEFAULT TRUE,
         observacoes TEXT,
         telefone CHAR(11),
-        categoria_id BIGINT NOT NULL,
+        categoria_id INT NOT NULL,
         momento_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id),
         FOREIGN KEY (categoria_id) REFERENCES categoria(id)

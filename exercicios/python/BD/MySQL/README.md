@@ -537,7 +537,7 @@ QUIT;
 - **MySQL**: `AUTO_INCREMENT` vs PostgreSQL `SERIAL`
 - **MySQL**: `INT` vs PostgreSQL `INTEGER`
 - **MySQL**: `VARCHAR` vs PostgreSQL `VARCHAR` (similar)
-- **MySQL**: `DATETIME` vs PostgreSQL `TIMESTAMP`
+- **MySQL**: `TIMESTAMP` vs PostgreSQL `TIMESTAMP` (similar)
 
 ### Sintaxe SQL
 - **MySQL**: `AUTO_INCREMENT PRIMARY KEY`
