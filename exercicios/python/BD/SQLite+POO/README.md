@@ -16,6 +16,7 @@ Sistema completo de gerenciamento de pessoas e categorias utilizando SQLite como
 - [Comandos SQLite Úteis](#comandos-sqlite-úteis)
 - [Troubleshooting](#troubleshooting)
 
+<a id="estrutura-do-projeto"></a>
 ## 📁 Estrutura do Projeto
 
 ```
@@ -39,6 +40,7 @@ SQLite+POO/
 └── README.md                 # Este arquivo
 ```
 
+<a id="pré-requisitos"></a>
 ## 🔧 Pré-requisitos
 
 ### 1. Python 3.7+
@@ -67,6 +69,7 @@ sqlite3 --version
 sqlite3 exemplo_bd.db
 ```
 
+<a id="instalação-e-configuração"></a>
 ## 🚀 Instalação e Configuração
 
 1. **Clone ou baixe o projeto**
@@ -78,6 +81,7 @@ cd SQLite+POO
 
 3. **Pronto!** O projeto está configurado. O banco de dados será criado automaticamente na primeira execução.
 
+<a id="como-usar"></a>
 ## 💻 Como Usar
 
 ### Executar Sistema Principal (Recomendado)
@@ -147,6 +151,7 @@ Os testes verificam:
 - ✅ Operações CRUD de Pessoa
 - ✅ Integridade referencial e constraints
 
+<a id="arquitetura-do-projeto"></a>
 ## 🏗️ Arquitetura do Projeto
 
 O projeto segue uma arquitetura em camadas seguindo o padrão **DAO (Data Access Object)**:
@@ -185,6 +190,7 @@ O projeto segue uma arquitetura em camadas seguindo o padrão **DAO (Data Access
 - **`PessoaService`**: Interface interativa via CLI para gerenciar pessoas
 - **`CategoriaService`**: Interface interativa via CLI para gerenciar categorias
 
+<a id="modelos-de-dados"></a>
 ## 📊 Modelos de Dados
 
 ### Tabela: `categoria`
@@ -216,6 +222,7 @@ O projeto segue uma arquitetura em camadas seguindo o padrão **DAO (Data Access
 - **Pessoa → Categoria**: Relacionamento Many-to-One (N pessoas pertencem a 1 categoria)
 - **Foreign Key**: `pessoa.categoria_id` referencia `categoria.id`
 
+<a id="operações-crud"></a>
 ## 🔄 Operações CRUD
 
 ### Criar (Create)
@@ -293,6 +300,7 @@ pessoaDao.deletar(pessoa)
 categoriaDao.deletar(categoria)
 ```
 
+<a id="exemplos-de-uso"></a>
 ## 📝 Exemplos de Uso
 
 ### Exemplo 1: Uso Completo
@@ -345,6 +353,7 @@ print(f"Categoria: {pessoaEncontrada.categoria.nome}")
 db.fechar()
 ```
 
+<a id="testes"></a>
 ## 🧪 Testes
 
 O projeto inclui uma suite completa de testes automatizados:
@@ -368,6 +377,7 @@ python3 test/teste_projeto.py
    - Constraints UNIQUE
    - Validações de dados
 
+<a id="comandos-sqlite-úteis"></a>
 ## 🗄️ Comandos SQLite Úteis
 
 ### Conexão e Navegação
@@ -437,6 +447,7 @@ PRAGMA integrity_check;
 ANALYZE;
 ```
 
+<a id="troubleshooting"></a>
 ## 🔍 Troubleshooting
 
 ### Problemas Comuns
