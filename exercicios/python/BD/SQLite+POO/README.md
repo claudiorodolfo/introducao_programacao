@@ -29,8 +29,9 @@ SQLite+POO/
 │   ├── pessoa_dao.py         # DAO para operações de banco de Pessoa
 │   └── categoria_dao.py      # DAO para operações de banco de Categoria
 ├── app/
-│   ├── PessoaService.py      # Serviço interativo para gerenciar pessoas
-│   └── CategoriaService.py   # Serviço interativo para gerenciar categorias
+│   ├── main.py               # Sistema principal com menu unificado
+│   ├── pessoa_service.py     # Serviço interativo para gerenciar pessoas
+│   └── categoria_service.py  # Serviço interativo para gerenciar categorias
 ├── exemplo_uso_orm.py        # Exemplo completo de uso das classes
 ├── teste_projeto.py          # Suite de testes automatizados
 ├── exemplo_bd.db             # Arquivo do banco de dados SQLite (gerado automaticamente)
@@ -78,11 +79,28 @@ cd SQLite+POO
 
 ## 💻 Como Usar
 
-### Executar Serviços Interativos
+### Executar Sistema Principal (Recomendado)
+
+O sistema principal oferece um menu unificado que permite escolher entre gerenciar Categorias ou Pessoas:
+
+```bash
+python3 app/main.py
+```
+
+**Menu Principal:**
+- 1. Gerenciar Categorias
+- 2. Gerenciar Pessoas
+- 0. Sair
+
+Ao escolher uma opção, você será redirecionado para o menu específico do módulo selecionado.
+
+### Executar Serviços Individuais (Alternativo)
+
+Se preferir, você também pode executar os serviços diretamente:
 
 #### Gerenciar Pessoas
 ```bash
-python3 app/PessoaService.py
+python3 app/pessoa_service.py
 ```
 
 Menu disponível:
@@ -96,7 +114,7 @@ Menu disponível:
 
 #### Gerenciar Categorias
 ```bash
-python3 app/CategoriaService.py
+python3 app/categoria_service.py
 ```
 
 Menu disponível:
@@ -164,6 +182,7 @@ O projeto segue uma arquitetura em camadas seguindo o padrão **DAO (Data Access
   - `criarTabela()` - Cria estrutura da tabela
 
 ### Camada de Aplicação (`app/`)
+- **`SistemaPrincipal`**: Menu unificado que permite ao usuário escolher entre gerenciar Categorias ou Pessoas
 - **`PessoaService`**: Interface interativa via CLI para gerenciar pessoas
 - **`CategoriaService`**: Interface interativa via CLI para gerenciar categorias
 
