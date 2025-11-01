@@ -170,7 +170,6 @@ O projeto segue uma arquitetura em camadas seguindo o padrão **DAO (Data Access
   - `buscarPorNome()` - Busca por nome exato
   - `listarTodas()` - Lista todas as categorias
   - `deletar()` - Remove categoria
-  - `criarTabela()` - Cria estrutura da tabela
 
 - **`PessoaDAO`**: Operações CRUD para Pessoa
   - `salvar()` - Insere ou atualiza
@@ -180,7 +179,6 @@ O projeto segue uma arquitetura em camadas seguindo o padrão **DAO (Data Access
   - `listarTodas()` - Lista todas as pessoas (com opção de JOIN com categoria)
   - `deletar()` - Remove pessoa
   - `obterCategoria()` - Obtém categoria relacionada
-  - `criarTabela()` - Cria estrutura da tabela
 
 ### Camada de Aplicação (`app/`)
 - **`SistemaPrincipal`**: Menu unificado que permite ao usuário escolher entre gerenciar Categorias ou Pessoas
