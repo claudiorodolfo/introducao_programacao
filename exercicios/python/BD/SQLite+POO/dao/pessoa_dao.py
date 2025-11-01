@@ -34,9 +34,9 @@ class PessoaDAO:
         cur = self.db.cursor()
         
         # Converter boolean para integer (SQLite)
-        ativo_int = 1 if pessoa.ativo else 0
+        ativoInt = 1 if pessoa.ativo else 0
         
-        categoria_id = pessoa.categoria.id
+        categoriaId = pessoa.categoria.id
         
         if pessoa.id is None:
             # INSERT
@@ -45,8 +45,8 @@ class PessoaDAO:
                                  ativo, observacoes, telefone, categoria_id)
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
             """, (pessoa.nome, pessoa.email, pessoa.idade, pessoa.altura, pessoa.peso,
-                  pessoa.data_nascimento, ativo_int, pessoa.observacoes, pessoa.telefone,
-                  categoria_id))
+                  pessoa.data_nascimento, ativoInt, pessoa.observacoes, pessoa.telefone,
+                  categoriaId))
 
             pessoa.id = cur.lastrowid
         else:
@@ -57,8 +57,8 @@ class PessoaDAO:
                                telefone = ?, categoria_id = ?
                 WHERE id = ?;
             """, (pessoa.nome, pessoa.email, pessoa.idade, pessoa.altura, pessoa.peso,
-                  pessoa.data_nascimento, ativo_int, pessoa.observacoes, pessoa.telefone,
-                  categoria_id, pessoa.id))
+                  pessoa.data_nascimento, ativoInt, pessoa.observacoes, pessoa.telefone,
+                  categoriaId, pessoa.id))
         
         return pessoa.id
     
@@ -81,10 +81,10 @@ class PessoaDAO:
             resultado.append(self.criarDeRow(row))
         return resultado
     
-    def listarTodas(self, com_categoria: bool = False):
+    def listarTodas(self, comCategoria: bool = False):
         cur = self.db.cursor()
         
-        if com_categoria:
+        if comCategoria:
             cur.execute("""
                 SELECT p.*, c.nome as categoria_nome
                 FROM pessoa p
@@ -100,9 +100,9 @@ class PessoaDAO:
             resultado.append(self.criarDeRow(row))
         return resultado
     
-    def buscarPorCategoria(self, categoria_id: int):
+    def buscarPorCategoria(self, categoriaId: int):
         cur = self.db.cursor()
-        cur.execute("SELECT * FROM pessoa WHERE categoria_id = ? ORDER BY nome;", (categoria_id,))
+        cur.execute("SELECT * FROM pessoa WHERE categoria_id = ? ORDER BY nome;", (categoriaId,))
         rows = cur.fetchall()
         
         resultado = []

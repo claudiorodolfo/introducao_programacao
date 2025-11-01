@@ -16,9 +16,9 @@ class CategoriaService:
     
     def __init__(self, db: DatabaseConnection):
         self.db = db
-        self.categoria_dao = CategoriaDAO(db)
+        self.categoriaDao = CategoriaDAO(db)
     
-    def exibir_menu(self):
+    def exibirMenu(self):
         """Exibe o menu principal de opções"""
         print("\n" + "="*50)
         print("  SISTEMA DE GERENCIAMENTO DE CATEGORIAS")
@@ -32,7 +32,7 @@ class CategoriaService:
         print("0. Sair")
         print("="*50)
     
-    def criar_categoria(self):
+    def criarCategoria(self):
         """Solicita dados do usuário e cria uma nova categoria"""
         print("\n--- CRIAR CATEGORIA ---")
         nome = input("Digite o nome da categoria: ").strip()
@@ -43,27 +43,27 @@ class CategoriaService:
         
         try:
             # Verificar se já existe uma categoria com esse nome
-            categoria_existente = self.categoria_dao.buscarPorNome(nome)
-            if categoria_existente:
-                print(f"❌ Erro: Já existe uma categoria com o nome '{nome}' (ID: {categoria_existente.id})")
+            categoriaExistente = self.categoriaDao.buscarPorNome(nome)
+            if categoriaExistente:
+                print(f"❌ Erro: Já existe uma categoria com o nome '{nome}' (ID: {categoriaExistente.id})")
                 return
             
             # Criar nova categoria
             categoria = Categoria(id=None, nome=nome)
-            categoria_id = self.categoria_dao.salvar(categoria)
+            categoriaId = self.categoriaDao.salvar(categoria)
             print(f"✅ Categoria criada com sucesso!")
-            print(f"   ID: {categoria_id}")
+            print(f"   ID: {categoriaId}")
             print(f"   Nome: {categoria.nome}")
         
         except Exception as e:
             print(f"❌ Erro ao criar categoria: {e}")
     
-    def listar_categorias(self):
+    def listarCategorias(self):
         """Lista todas as categorias cadastradas"""
         print("\n--- LISTAR TODAS AS CATEGORIAS ---")
         
         try:
-            categorias = self.categoria_dao.listarTodas()
+            categorias = self.categoriaDao.listarTodas()
             
             if not categorias:
                 print("⚠️  Nenhuma categoria cadastrada.")
@@ -82,29 +82,29 @@ class CategoriaService:
         except Exception as e:
             print(f"❌ Erro ao listar categorias: {e}")
     
-    def buscar_por_id(self):
+    def buscarPorId(self):
         """Solicita um ID e busca a categoria correspondente"""
         print("\n--- BUSCAR CATEGORIA POR ID ---")
         
         try:
-            id_str = input("Digite o ID da categoria: ").strip()
-            categoria_id = int(id_str)
+            idStr = input("Digite o ID da categoria: ").strip()
+            categoriaId = int(idStr)
             
-            categoria = self.categoria_dao.buscarPorId(categoria_id)
+            categoria = self.categoriaDao.buscarPorId(categoriaId)
             
             if categoria:
                 print("\n✅ Categoria encontrada:")
                 print(f"   ID: {categoria.id}")
                 print(f"   Nome: {categoria.nome}")
             else:
-                print(f"⚠️  Categoria com ID {categoria_id} não encontrada.")
+                print(f"⚠️  Categoria com ID {categoriaId} não encontrada.")
         
         except ValueError:
             print("❌ Erro: ID deve ser um número inteiro!")
         except Exception as e:
             print(f"❌ Erro ao buscar categoria: {e}")
     
-    def buscar_por_nome(self):
+    def buscarPorNome(self):
         """Solicita um nome e busca a categoria correspondente"""
         print("\n--- BUSCAR CATEGORIA POR NOME ---")
         
@@ -115,7 +115,7 @@ class CategoriaService:
             return
         
         try:
-            categoria = self.categoria_dao.buscarPorNome(nome)
+            categoria = self.categoriaDao.buscarPorNome(nome)
             
             if categoria:
                 print("\n✅ Categoria encontrada:")
@@ -127,40 +127,40 @@ class CategoriaService:
         except Exception as e:
             print(f"❌ Erro ao buscar categoria: {e}")
     
-    def atualizar_categoria(self):
+    def atualizarCategoria(self):
         """Solicita dados do usuário e atualiza uma categoria existente"""
         print("\n--- ATUALIZAR CATEGORIA ---")
         
         try:
-            id_str = input("Digite o ID da categoria a atualizar: ").strip()
-            categoria_id = int(id_str)
+            idStr = input("Digite o ID da categoria a atualizar: ").strip()
+            categoriaId = int(idStr)
             
             # Buscar a categoria existente
-            categoria = self.categoria_dao.buscarPorId(categoria_id)
+            categoria = self.categoriaDao.buscarPorId(categoriaId)
             
             if not categoria:
-                print(f"⚠️  Categoria com ID {categoria_id} não encontrada.")
+                print(f"⚠️  Categoria com ID {categoriaId} não encontrada.")
                 return
             
             print(f"\nCategoria atual:")
             print(f"   ID: {categoria.id}")
             print(f"   Nome: {categoria.nome}")
             
-            novo_nome = input("\nDigite o novo nome da categoria (ou Enter para manter): ").strip()
+            novoNome = input("\nDigite o novo nome da categoria (ou Enter para manter): ").strip()
             
-            if not novo_nome:
+            if not novoNome:
                 print("⚠️  Operação cancelada. Nome não foi alterado.")
                 return
             
             # Verificar se já existe outra categoria com esse nome
-            categoria_existente = self.categoria_dao.buscarPorNome(novo_nome)
-            if categoria_existente and categoria_existente.id != categoria_id:
-                print(f"❌ Erro: Já existe outra categoria com o nome '{novo_nome}' (ID: {categoria_existente.id})")
+            categoriaExistente = self.categoriaDao.buscarPorNome(novoNome)
+            if categoriaExistente and categoriaExistente.id != categoriaId:
+                print(f"❌ Erro: Já existe outra categoria com o nome '{novoNome}' (ID: {categoriaExistente.id})")
                 return
             
             # Atualizar categoria
-            categoria.nome = novo_nome
-            self.categoria_dao.salvar(categoria)
+            categoria.nome = novoNome
+            self.categoriaDao.salvar(categoria)
             print(f"\n✅ Categoria atualizada com sucesso!")
             print(f"   ID: {categoria.id}")
             print(f"   Nome: {categoria.nome}")
@@ -170,19 +170,19 @@ class CategoriaService:
         except Exception as e:
             print(f"❌ Erro ao atualizar categoria: {e}")
     
-    def deletar_categoria(self):
+    def deletarCategoria(self):
         """Solicita um ID e deleta a categoria correspondente"""
         print("\n--- DELETAR CATEGORIA ---")
         
         try:
-            id_str = input("Digite o ID da categoria a deletar: ").strip()
-            categoria_id = int(id_str)
+            idStr = input("Digite o ID da categoria a deletar: ").strip()
+            categoriaId = int(idStr)
             
             # Buscar a categoria existente
-            categoria = self.categoria_dao.buscarPorId(categoria_id)
+            categoria = self.categoriaDao.buscarPorId(categoriaId)
             
             if not categoria:
-                print(f"⚠️  Categoria com ID {categoria_id} não encontrada.")
+                print(f"⚠️  Categoria com ID {categoriaId} não encontrada.")
                 return
             
             print(f"\nCategoria a ser deletada:")
@@ -195,7 +195,7 @@ class CategoriaService:
                 print("❌ Operação cancelada.")
                 return
             
-            sucesso = self.categoria_dao.deletar(categoria)
+            sucesso = self.categoriaDao.deletar(categoria)
             
             if sucesso:
                 print(f"\n✅ Categoria deletada com sucesso!")
@@ -211,24 +211,24 @@ class CategoriaService:
         """Método principal que executa o loop do menu"""
         try:
             while True:
-                self.exibir_menu()
+                self.exibirMenu()
                 opcao = input("\nEscolha uma opção: ").strip()
                 
                 if opcao == '0':
                     print("\n👋 Encerrando o sistema...")
                     break
                 elif opcao == '1':
-                    self.criar_categoria()
+                    self.criarCategoria()
                 elif opcao == '2':
-                    self.listar_categorias()
+                    self.listarCategorias()
                 elif opcao == '3':
-                    self.buscar_por_id()
+                    self.buscarPorId()
                 elif opcao == '4':
-                    self.buscar_por_nome()
+                    self.buscarPorNome()
                 elif opcao == '5':
-                    self.atualizar_categoria()
+                    self.atualizarCategoria()
                 elif opcao == '6':
-                    self.deletar_categoria()
+                    self.deletarCategoria()
                 else:
                     print("❌ Opção inválida! Tente novamente.")
                 

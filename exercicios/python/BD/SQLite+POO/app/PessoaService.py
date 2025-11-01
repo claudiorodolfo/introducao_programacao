@@ -11,7 +11,6 @@ from bd.database import DatabaseConnection
 from dao.pessoa_dao import PessoaDAO
 from dao.categoria_dao import CategoriaDAO
 from model.pessoa import Pessoa
-from model.categoria import Categoria
 
 
 class PessoaService:
@@ -19,9 +18,9 @@ class PessoaService:
     def __init__(self, db: DatabaseConnection):
         self.db = db
         self.pessoa_dao = PessoaDAO(db)
-        self.categoria_dao = CategoriaDAO(db)
+        self.categoriaDao = CategoriaDAO(db)
     
-    def exibir_menu(self):
+    def exibirMenu(self):
         """Exibe o menu principal de opções"""
         print("\n" + "="*50)
         print("  SISTEMA DE GERENCIAMENTO DE PESSOAS")
@@ -36,9 +35,9 @@ class PessoaService:
         print("0. Sair")
         print("="*50)
     
-    def listar_categorias_disponiveis(self):
+    def listarCategoriasDisponiveis(self):
         """Lista todas as categorias disponíveis para seleção"""
-        categorias = self.categoria_dao.listarTodas()
+        categorias = self.categoriaDao.listarTodas()
         if not categorias:
             print("⚠️  Nenhuma categoria cadastrada. Cadastre uma categoria primeiro!")
             return None
@@ -50,19 +49,19 @@ class PessoaService:
         print("-"*30)
         return categorias
     
-    def selecionar_categoria(self):
+    def selecionarCategoria(self):
         """Solicita ao usuário que selecione uma categoria"""
-        categorias = self.listar_categorias_disponiveis()
+        categorias = self.listarCategoriasDisponiveis()
         if not categorias:
             return None
         
         try:
-            categoria_id_str = input("Digite o ID da categoria: ").strip()
-            categoria_id = int(categoria_id_str)
+            categoriaIdStr = input("Digite o ID da categoria: ").strip()
+            categoriaId = int(categoriaIdStr)
             
-            categoria = self.categoria_dao.buscarPorId(categoria_id)
+            categoria = self.categoriaDao.buscarPorId(categoriaId)
             if not categoria:
-                print(f"❌ Erro: Categoria com ID {categoria_id} não encontrada!")
+                print(f"❌ Erro: Categoria com ID {categoriaId} não encontrada!")
                 return None
             
             return categoria
@@ -70,7 +69,7 @@ class PessoaService:
             print("❌ Erro: ID deve ser um número inteiro!")
             return None
     
-    def criar_pessoa(self):
+    def criarPessoa(self):
         """Solicita dados do usuário e cria uma nova pessoa"""
         print("\n--- CRIAR PESSOA ---")
         
@@ -85,30 +84,30 @@ class PessoaService:
             return
         
         # Verificar se já existe uma pessoa com esse email
-        pessoas_existentes = self.pessoa_dao.buscarPorNome("")  # Buscar todas para verificar email
-        todas_pessoas = self.pessoa_dao.listarTodas()
-        for p in todas_pessoas:
+        pessoasExistentes = self.pessoa_dao.buscarPorNome("")  # Buscar todas para verificar email
+        todasPessoas = self.pessoa_dao.listarTodas()
+        for p in todasPessoas:
             if p.email.lower() == email.lower():
                 print(f"❌ Erro: Já existe uma pessoa com o email '{email}' (ID: {p.id})")
                 return
         
         # Selecionar categoria
-        categoria = self.selecionar_categoria()
+        categoria = self.selecionarCategoria()
         if not categoria:
             return
         
         # Campos opcionais
-        idade_str = input("Digite a idade (ou Enter para pular): ").strip()
-        idade = int(idade_str) if idade_str else None
+        idadeStr = input("Digite a idade (ou Enter para pular): ").strip()
+        idade = int(idadeStr) if idadeStr else None
         
-        altura_str = input("Digite a altura em metros (ex: 1.75, ou Enter para pular): ").strip()
-        altura = float(altura_str) if altura_str else None
+        alturaStr = input("Digite a altura em metros (ex: 1.75, ou Enter para pular): ").strip()
+        altura = float(alturaStr) if alturaStr else None
         
-        peso_str = input("Digite o peso em kg (ex: 75.5, ou Enter para pular): ").strip()
-        peso = float(peso_str) if peso_str else None
+        pesoStr = input("Digite o peso em kg (ex: 75.5, ou Enter para pular): ").strip()
+        peso = float(pesoStr) if pesoStr else None
         
-        data_nascimento = input("Digite a data de nascimento (AAAA-MM-DD, ou Enter para pular): ").strip()
-        data_nascimento = data_nascimento if data_nascimento else None
+        dataNascimento = input("Digite a data de nascimento (AAAA-MM-DD, ou Enter para pular): ").strip()
+        dataNascimento = dataNascimento if dataNascimento else None
         
         telefone = input("Digite o telefone (ou Enter para pular): ").strip()
         telefone = telefone if telefone else None
@@ -116,8 +115,8 @@ class PessoaService:
         observacoes = input("Digite observações (ou Enter para pular): ").strip()
         observacoes = observacoes if observacoes else None
         
-        ativo_str = input("Pessoa está ativa? (S/n): ").strip().lower()
-        ativo = ativo_str != 'n'
+        ativoStr = input("Pessoa está ativa? (S/n): ").strip().lower()
+        ativo = ativoStr != 'n'
         
         try:
             pessoa = Pessoa(
@@ -128,22 +127,22 @@ class PessoaService:
                 idade=idade,
                 altura=altura,
                 peso=peso,
-                data_nascimento=data_nascimento,
+                data_nascimento=dataNascimento,
                 ativo=ativo,
                 observacoes=observacoes,
                 telefone=telefone
             )
             
-            pessoa_id = self.pessoa_dao.salvar(pessoa)
+            pessoaId = self.pessoa_dao.salvar(pessoa)
             print(f"\n✅ Pessoa criada com sucesso!")
-            self.exibir_detalhes_pessoa(pessoa)
+            self.exibirDetalhesPessoa(pessoa)
         
         except ValueError as e:
             print(f"❌ Erro de validação: {e}")
         except Exception as e:
             print(f"❌ Erro ao criar pessoa: {e}")
     
-    def exibir_detalhes_pessoa(self, pessoa: Pessoa):
+    def exibirDetalhesPessoa(self, pessoa: Pessoa):
         """Exibe os detalhes completos de uma pessoa"""
         print(f"\n   ID: {pessoa.id}")
         print(f"   Nome: {pessoa.nome}")
@@ -165,7 +164,7 @@ class PessoaService:
         if pessoa.momento_cadastro:
             print(f"   Cadastrado em: {pessoa.momento_cadastro}")
     
-    def listar_pessoas(self):
+    def listarPessoas(self):
         """Lista todas as pessoas cadastradas"""
         print("\n--- LISTAR TODAS AS PESSOAS ---")
         
@@ -190,28 +189,28 @@ class PessoaService:
         except Exception as e:
             print(f"❌ Erro ao listar pessoas: {e}")
     
-    def buscar_por_id(self):
+    def buscarPorId(self):
         """Solicita um ID e busca a pessoa correspondente"""
         print("\n--- BUSCAR PESSOA POR ID ---")
         
         try:
-            id_str = input("Digite o ID da pessoa: ").strip()
-            pessoa_id = int(id_str)
+            idStr = input("Digite o ID da pessoa: ").strip()
+            pessoaId = int(idStr)
             
-            pessoa = self.pessoa_dao.buscarPorId(pessoa_id)
+            pessoa = self.pessoa_dao.buscarPorId(pessoaId)
             
             if pessoa:
                 print("\n✅ Pessoa encontrada:")
-                self.exibir_detalhes_pessoa(pessoa)
+                self.exibirDetalhesPessoa(pessoa)
             else:
-                print(f"⚠️  Pessoa com ID {pessoa_id} não encontrada.")
+                print(f"⚠️  Pessoa com ID {pessoaId} não encontrada.")
         
         except ValueError:
             print("❌ Erro: ID deve ser um número inteiro!")
         except Exception as e:
             print(f"❌ Erro ao buscar pessoa: {e}")
     
-    def buscar_por_nome(self):
+    def buscarPorNome(self):
         """Solicita um nome e busca pessoas correspondentes"""
         print("\n--- BUSCAR PESSOA POR NOME ---")
         
@@ -236,24 +235,24 @@ class PessoaService:
         except Exception as e:
             print(f"❌ Erro ao buscar pessoa: {e}")
     
-    def buscar_por_categoria(self):
+    def buscarPorCategoria(self):
         """Lista pessoas de uma categoria específica"""
         print("\n--- BUSCAR PESSOAS POR CATEGORIA ---")
         
-        categorias = self.listar_categorias_disponiveis()
+        categorias = self.listarCategoriasDisponiveis()
         if not categorias:
             return
         
         try:
-            categoria_id_str = input("Digite o ID da categoria: ").strip()
-            categoria_id = int(categoria_id_str)
+            categoriaIdStr = input("Digite o ID da categoria: ").strip()
+            categoriaId = int(categoriaIdStr)
             
-            categoria = self.categoria_dao.buscarPorId(categoria_id)
+            categoria = self.categoriaDao.buscarPorId(categoriaId)
             if not categoria:
-                print(f"❌ Erro: Categoria com ID {categoria_id} não encontrada!")
+                print(f"❌ Erro: Categoria com ID {categoriaId} não encontrada!")
                 return
             
-            pessoas = self.pessoa_dao.buscarPorCategoria(categoria_id)
+            pessoas = self.pessoa_dao.buscarPorCategoria(categoriaId)
             
             if pessoas:
                 print(f"\n✅ {len(pessoas)} pessoa(s) encontrada(s) na categoria '{categoria.nome}':")
@@ -270,115 +269,115 @@ class PessoaService:
         except Exception as e:
             print(f"❌ Erro ao buscar pessoas: {e}")
     
-    def atualizar_pessoa(self):
+    def atualizarPessoa(self):
         """Solicita dados do usuário e atualiza uma pessoa existente"""
         print("\n--- ATUALIZAR PESSOA ---")
         
         try:
-            id_str = input("Digite o ID da pessoa a atualizar: ").strip()
-            pessoa_id = int(id_str)
+            idStr = input("Digite o ID da pessoa a atualizar: ").strip()
+            pessoaId = int(idStr)
             
-            pessoa = self.pessoa_dao.buscarPorId(pessoa_id)
+            pessoa = self.pessoa_dao.buscarPorId(pessoaId)
             
             if not pessoa:
-                print(f"⚠️  Pessoa com ID {pessoa_id} não encontrada.")
+                print(f"⚠️  Pessoa com ID {pessoaId} não encontrada.")
                 return
             
             print(f"\nPessoa atual:")
-            self.exibir_detalhes_pessoa(pessoa)
+            self.exibirDetalhesPessoa(pessoa)
             
             print("\nDigite os novos dados (ou Enter para manter o valor atual):")
             
             # Nome
-            novo_nome = input(f"Nome [{pessoa.nome}]: ").strip()
-            if novo_nome:
-                pessoa.nome = novo_nome
+            novoNome = input(f"Nome [{pessoa.nome}]: ").strip()
+            if novoNome:
+                pessoa.nome = novoNome
             
             # Email
-            novo_email = input(f"Email [{pessoa.email}]: ").strip()
-            if novo_email:
+            novoEmail = input(f"Email [{pessoa.email}]: ").strip()
+            if novoEmail:
                 # Verificar se já existe outra pessoa com esse email
-                todas_pessoas = self.pessoa_dao.listarTodas()
-                for p in todas_pessoas:
-                    if p.id != pessoa_id and p.email.lower() == novo_email.lower():
-                        print(f"❌ Erro: Já existe outra pessoa com o email '{novo_email}' (ID: {p.id})")
+                todasPessoas = self.pessoa_dao.listarTodas()
+                for p in todasPessoas:
+                    if p.id != pessoaId and p.email.lower() == novoEmail.lower():
+                        print(f"❌ Erro: Já existe outra pessoa com o email '{novoEmail}' (ID: {p.id})")
                         return
-                pessoa.email = novo_email
+                pessoa.email = novoEmail
             
             # Categoria
-            categoria_str = input(f"Categoria ID [{pessoa.categoria.id} - {pessoa.categoria.nome}] (ou Enter para manter): ").strip()
-            if categoria_str:
-                nova_categoria_id = int(categoria_str)
-                nova_categoria = self.categoria_dao.buscarPorId(nova_categoria_id)
-                if not nova_categoria:
-                    print(f"❌ Erro: Categoria com ID {nova_categoria_id} não encontrada!")
+            categoriaStr = input(f"Categoria ID [{pessoa.categoria.id} - {pessoa.categoria.nome}] (ou Enter para manter): ").strip()
+            if categoriaStr:
+                novaCategoriaId = int(categoriaStr)
+                novaCategoria = self.categoriaDao.buscarPorId(novaCategoriaId)
+                if not novaCategoria:
+                    print(f"❌ Erro: Categoria com ID {novaCategoriaId} não encontrada!")
                     return
-                pessoa.categoria = nova_categoria
+                pessoa.categoria = novaCategoria
             
             # Idade
-            idade_str = input(f"Idade [{pessoa.idade or 'N/A'}] (ou Enter para manter): ").strip()
-            if idade_str:
-                pessoa.idade = int(idade_str) if idade_str else None
-            elif not idade_str and pessoa.idade is not None:
+            idadeStr = input(f"Idade [{pessoa.idade or 'N/A'}] (ou Enter para manter): ").strip()
+            if idadeStr:
+                pessoa.idade = int(idadeStr) if idadeStr else None
+            elif not idadeStr and pessoa.idade is not None:
                 # Manter o valor atual
                 pass
             
             # Altura
-            altura_str = input(f"Altura [{pessoa.altura or 'N/A'}]m (ou Enter para manter): ").strip()
-            if altura_str:
-                pessoa.altura = float(altura_str) if altura_str else None
+            alturaStr = input(f"Altura [{pessoa.altura or 'N/A'}]m (ou Enter para manter): ").strip()
+            if alturaStr:
+                pessoa.altura = float(alturaStr) if alturaStr else None
             
             # Peso
-            peso_str = input(f"Peso [{pessoa.peso or 'N/A'}]kg (ou Enter para manter): ").strip()
-            if peso_str:
-                pessoa.peso = float(peso_str) if peso_str else None
+            pesoStr = input(f"Peso [{pessoa.peso or 'N/A'}]kg (ou Enter para manter): ").strip()
+            if pesoStr:
+                pessoa.peso = float(pesoStr) if pesoStr else None
             
             # Data de nascimento
-            data_str = input(f"Data de nascimento [{pessoa.data_nascimento or 'N/A'}] (ou Enter para manter): ").strip()
-            if data_str:
-                pessoa.data_nascimento = data_str if data_str else None
+            dataStr = input(f"Data de nascimento [{pessoa.data_nascimento or 'N/A'}] (ou Enter para manter): ").strip()
+            if dataStr:
+                pessoa.data_nascimento = dataStr if dataStr else None
             
             # Telefone
-            telefone_str = input(f"Telefone [{pessoa.telefone or 'N/A'}] (ou Enter para manter): ").strip()
-            if telefone_str:
-                pessoa.telefone = telefone_str if telefone_str else None
+            telefoneStr = input(f"Telefone [{pessoa.telefone or 'N/A'}] (ou Enter para manter): ").strip()
+            if telefoneStr:
+                pessoa.telefone = telefoneStr if telefoneStr else None
             
             # Observações
-            obs_str = input(f"Observações [{pessoa.observacoes or 'N/A'}] (ou Enter para manter): ").strip()
-            if obs_str:
-                pessoa.observacoes = obs_str if obs_str else None
+            obsStr = input(f"Observações [{pessoa.observacoes or 'N/A'}] (ou Enter para manter): ").strip()
+            if obsStr:
+                pessoa.observacoes = obsStr if obsStr else None
             
             # Status ativo
-            ativo_str = input(f"Status ativo (S/n) [{'S' if pessoa.ativo else 'n'}] (ou Enter para manter): ").strip().lower()
-            if ativo_str:
-                pessoa.ativo = ativo_str != 'n'
+            ativoStr = input(f"Status ativo (S/n) [{'S' if pessoa.ativo else 'n'}] (ou Enter para manter): ").strip().lower()
+            if ativoStr:
+                pessoa.ativo = ativoStr != 'n'
             
             self.pessoa_dao.salvar(pessoa)
             print(f"\n✅ Pessoa atualizada com sucesso!")
             print("\nDados atualizados:")
-            self.exibir_detalhes_pessoa(pessoa)
+            self.exibirDetalhesPessoa(pessoa)
         
         except ValueError as e:
             print(f"❌ Erro: {e}")
         except Exception as e:
             print(f"❌ Erro ao atualizar pessoa: {e}")
     
-    def deletar_pessoa(self):
+    def deletarPessoa(self):
         """Solicita um ID e deleta a pessoa correspondente"""
         print("\n--- DELETAR PESSOA ---")
         
         try:
-            id_str = input("Digite o ID da pessoa a deletar: ").strip()
-            pessoa_id = int(id_str)
+            idStr = input("Digite o ID da pessoa a deletar: ").strip()
+            pessoaId = int(idStr)
             
-            pessoa = self.pessoa_dao.buscarPorId(pessoa_id)
+            pessoa = self.pessoa_dao.buscarPorId(pessoaId)
             
             if not pessoa:
-                print(f"⚠️  Pessoa com ID {pessoa_id} não encontrada.")
+                print(f"⚠️  Pessoa com ID {pessoaId} não encontrada.")
                 return
             
             print(f"\nPessoa a ser deletada:")
-            self.exibir_detalhes_pessoa(pessoa)
+            self.exibirDetalhesPessoa(pessoa)
             
             confirmacao = input("\n⚠️  Tem certeza que deseja deletar esta pessoa? (s/N): ").strip().lower()
             
@@ -402,26 +401,26 @@ class PessoaService:
         """Método principal que executa o loop do menu"""
         try:
             while True:
-                self.exibir_menu()
+                self.exibirMenu()
                 opcao = input("\nEscolha uma opção: ").strip()
                 
                 if opcao == '0':
                     print("\n👋 Encerrando o sistema...")
                     break
                 elif opcao == '1':
-                    self.criar_pessoa()
+                    self.criarPessoa()
                 elif opcao == '2':
-                    self.listar_pessoas()
+                    self.listarPessoas()
                 elif opcao == '3':
-                    self.buscar_por_id()
+                    self.buscarPorId()
                 elif opcao == '4':
-                    self.buscar_por_nome()
+                    self.buscarPorNome()
                 elif opcao == '5':
-                    self.buscar_por_categoria()
+                    self.buscarPorCategoria()
                 elif opcao == '6':
-                    self.atualizar_pessoa()
+                    self.atualizarPessoa()
                 elif opcao == '7':
-                    self.deletar_pessoa()
+                    self.deletarPessoa()
                 else:
                     print("❌ Opção inválida! Tente novamente.")
                 

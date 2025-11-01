@@ -4,8 +4,8 @@ Classe para gerenciar conexão com o banco de dados SQLite
 import sqlite3
 
 class DatabaseConnection:
-    def __init__(self, db_path: str = 'exemplo_bd.db'):
-        self.db_path = db_path
+    def __init__(self, dbPath: str = 'exemplo_bd.db'):
+        self.db_path = dbPath
         self.conn = None
     
     def conectar(self):
@@ -36,12 +36,12 @@ class DatabaseConnection:
         from dao.pessoa_dao import PessoaDAO
         
         # Tabela categoria
-        categoria_dao = CategoriaDAO(self)
-        categoria_dao.criarTabela()
+        categoriaDao = CategoriaDAO(self)
+        categoriaDao.criarTabela()
         
         # Tabela pessoa
-        pessoa_dao = PessoaDAO(self)
-        pessoa_dao.criarTabela()
+        pessoaDao = PessoaDAO(self)
+        pessoaDao.criarTabela()
     
     def limparDados(self):
         cur = self.cursor()

@@ -28,39 +28,39 @@ def testarCategoria_dao(db):
     print("TESTE 1: Operações CRUD - Categoria")
     print("=" * 60)
     
-    categoria_dao = CategoriaDAO(db)
+    categoriaDao = CategoriaDAO(db)
     erros = []
     
     try:
         # CREATE
         print("\n✓ CREATE - Criando categoria...")
         cat1 = Categoria(id=None, nome="Desenvolvedor")
-        categoria_dao.salvar(cat1)
+        categoriaDao.salvar(cat1)
         assert cat1.id is not None, "ID não foi atribuído"
         print(f"  ✓ Categoria criada: {cat1}")
         
         cat2 = Categoria(id=None, nome="Designer")
-        categoria_dao.salvar(cat2)
+        categoriaDao.salvar(cat2)
         assert cat2.id is not None, "ID não foi atribuído"
         print(f"  ✓ Categoria criada: {cat2}")
         
         # READ - Buscar por ID
         print("\n✓ READ - Buscando categoria por ID...")
-        cat_encontrada = categoria_dao.buscarPorId(cat1.id)
-        assert cat_encontrada is not None, "Categoria não encontrada por ID"
-        assert cat_encontrada.nome == "Desenvolvedor", "Nome incorreto"
-        print(f"  ✓ Categoria encontrada: {cat_encontrada}")
+        catEncontrada = categoriaDao.buscarPorId(cat1.id)
+        assert catEncontrada is not None, "Categoria não encontrada por ID"
+        assert catEncontrada.nome == "Desenvolvedor", "Nome incorreto"
+        print(f"  ✓ Categoria encontrada: {catEncontrada}")
         
         # READ - Buscar por nome
         print("\n✓ READ - Buscando categoria por nome...")
-        cat_por_nome = categoria_dao.buscarPorNome("Designer")
-        assert cat_por_nome is not None, "Categoria não encontrada por nome"
-        assert cat_por_nome.nome == "Designer", "Nome incorreto"
-        print(f"  ✓ Categoria encontrada: {cat_por_nome}")
+        catPorNome = categoriaDao.buscarPorNome("Designer")
+        assert catPorNome is not None, "Categoria não encontrada por nome"
+        assert catPorNome.nome == "Designer", "Nome incorreto"
+        print(f"  ✓ Categoria encontrada: {catPorNome}")
         
         # READ - Listar todas
         print("\n✓ READ - Listando todas as categorias...")
-        todas = categoria_dao.listarTodas()
+        todas = categoriaDao.listarTodas()
         assert len(todas) >= 2, f"Esperava pelo menos 2 categorias, encontrou {len(todas)}"
         print(f"  ✓ Total de categorias: {len(todas)}")
         for cat in todas:
@@ -69,17 +69,17 @@ def testarCategoria_dao(db):
         # UPDATE
         print("\n✓ UPDATE - Atualizando categoria...")
         cat1.nome = "Desenvolvedor Senior"
-        categoria_dao.salvar(cat1)
-        cat_atualizada = categoria_dao.buscarPorId(cat1.id)
-        assert cat_atualizada.nome == "Desenvolvedor Senior", "Nome não foi atualizado"
-        print(f"  ✓ Categoria atualizada: {cat_atualizada}")
+        categoriaDao.salvar(cat1)
+        catAtualizada = categoriaDao.buscarPorId(cat1.id)
+        assert catAtualizada.nome == "Desenvolvedor Senior", "Nome não foi atualizado"
+        print(f"  ✓ Categoria atualizada: {catAtualizada}")
         
         # DELETE
         print("\n✓ DELETE - Deletando categoria...")
-        sucesso = categoria_dao.deletar(cat2)
+        sucesso = categoriaDao.deletar(cat2)
         assert sucesso, "Falha ao deletar categoria"
-        cat_deletada = categoria_dao.buscarPorId(cat2.id)
-        assert cat_deletada is None, "Categoria ainda existe após deletar"
+        catDeletada = categoriaDao.buscarPorId(cat2.id)
+        assert catDeletada is None, "Categoria ainda existe após deletar"
         print(f"  ✓ Categoria deletada com sucesso")
         
         print("\n✅ TESTE 1 PASSOU - Categoria CRUD OK\n")
@@ -99,17 +99,17 @@ def testarPessoaDao(db):
     print("TESTE 2: Operações CRUD - Pessoa")
     print("=" * 60)
     
-    categoria_dao = CategoriaDAO(db)
-    pessoa_dao = PessoaDAO(db)
+    categoriaDao = CategoriaDAO(db)
+    pessoaDao = PessoaDAO(db)
     erros = []
     
     try:
         # Garantir que temos uma categoria
         print("\n✓ Preparando categoria para testes...")
-        categoria = categoria_dao.buscarPorNome("Desenvolvedor Senior")
+        categoria = categoriaDao.buscarPorNome("Desenvolvedor Senior")
         if not categoria:
             categoria = Categoria(id=None, nome="Desenvolvedor Senior")
-            categoria_dao.salvar(categoria)
+            categoriaDao.salvar(categoria)
         print(f"  ✓ Usando categoria: {categoria}")
         
         # CREATE
@@ -127,15 +127,15 @@ def testarPessoaDao(db):
             observacoes="Desenvolvedor Python",
             telefone="11999999999"
         )
-        pessoa_dao.salvar(pessoa1)
+        pessoaDao.salvar(pessoa1)
         assert pessoa1.id is not None, "ID não foi atribuído"
         print(f"  ✓ Pessoa criada: {pessoa1}")
         
         # CREATE - Segunda pessoa
-        categoria2 = categoria_dao.buscarPorNome("Designer")
+        categoria2 = categoriaDao.buscarPorNome("Designer")
         if not categoria2:
             categoria2 = Categoria(id=None, nome="Designer")
-            categoria_dao.salvar(categoria2)
+            categoriaDao.salvar(categoria2)
         
         pessoa2 = Pessoa(
             id=None,
@@ -150,69 +150,69 @@ def testarPessoaDao(db):
             observacoes="Designer UX/UI",
             telefone="11888888888"
         )
-        pessoa_dao.salvar(pessoa2)
+        pessoaDao.salvar(pessoa2)
         assert pessoa2.id is not None, "ID não foi atribuído"
         print(f"  ✓ Pessoa criada: {pessoa2}")
         
         # READ - Buscar por ID
         print("\n✓ READ - Buscando pessoa por ID...")
-        pessoa_encontrada = pessoa_dao.buscarPorId(pessoa1.id)
-        assert pessoa_encontrada is not None, "Pessoa não encontrada por ID"
-        assert pessoa_encontrada.nome == "João Developer", "Nome incorreto"
-        assert pessoa_encontrada.email == "joao@example.com", "Email incorreto"
-        print(f"  ✓ Pessoa encontrada: {pessoa_encontrada}")
+        pessoaEncontrada = pessoaDao.buscarPorId(pessoa1.id)
+        assert pessoaEncontrada is not None, "Pessoa não encontrada por ID"
+        assert pessoaEncontrada.nome == "João Developer", "Nome incorreto"
+        assert pessoaEncontrada.email == "joao@example.com", "Email incorreto"
+        print(f"  ✓ Pessoa encontrada: {pessoaEncontrada}")
         
         # READ - Buscar por nome
         print("\n✓ READ - Buscando pessoa por nome...")
-        pessoas_joao = pessoa_dao.buscarPorNome("João")
-        assert len(pessoas_joao) > 0, "Nenhuma pessoa encontrada com nome 'João'"
-        print(f"  ✓ Pessoas encontradas com 'João': {len(pessoas_joao)}")
-        for p in pessoas_joao:
+        pessoasJoao = pessoaDao.buscarPorNome("João")
+        assert len(pessoasJoao) > 0, "Nenhuma pessoa encontrada com nome 'João'"
+        print(f"  ✓ Pessoas encontradas com 'João': {len(pessoasJoao)}")
+        for p in pessoasJoao:
             print(f"    - {p}")
         
         # READ - Buscar por categoria
         print("\n✓ READ - Buscando pessoas por categoria...")
-        pessoas_cat = pessoa_dao.buscarPorCategoria(categoria.id)
-        assert len(pessoas_cat) > 0, "Nenhuma pessoa encontrada na categoria"
-        print(f"  ✓ Pessoas na categoria '{categoria.nome}': {len(pessoas_cat)}")
+        pessoasCat = pessoaDao.buscarPorCategoria(categoria.id)
+        assert len(pessoasCat) > 0, "Nenhuma pessoa encontrada na categoria"
+        print(f"  ✓ Pessoas na categoria '{categoria.nome}': {len(pessoasCat)}")
         
         # READ - Listar todas
         print("\n✓ READ - Listando todas as pessoas...")
-        todas_pessoas = pessoa_dao.listarTodas()
-        assert len(todas_pessoas) >= 2, f"Esperava pelo menos 2 pessoas, encontrou {len(todas_pessoas)}"
-        print(f"  ✓ Total de pessoas: {len(todas_pessoas)}")
+        todasPessoas = pessoaDao.listarTodas()
+        assert len(todasPessoas) >= 2, f"Esperava pelo menos 2 pessoas, encontrou {len(todasPessoas)}"
+        print(f"  ✓ Total de pessoas: {len(todasPessoas)}")
         
         # Testar relacionamento
         print("\n✓ READ - Testando relacionamento com categoria...")
-        categoria_rel = pessoa_dao.obterCategoria(pessoa_encontrada)
-        assert categoria_rel is not None, "Categoria não foi encontrada"
-        assert categoria_rel.nome == "Desenvolvedor Senior", "Categoria incorreta"
-        print(f"  ✓ Categoria relacionada: {categoria_rel.nome}")
+        categoriaRel = pessoaDao.obterCategoria(pessoaEncontrada)
+        assert categoriaRel is not None, "Categoria não foi encontrada"
+        assert categoriaRel.nome == "Desenvolvedor Senior", "Categoria incorreta"
+        print(f"  ✓ Categoria relacionada: {categoriaRel.nome}")
         
         # UPDATE
         print("\n✓ UPDATE - Atualizando pessoa...")
         pessoa1.idade = 29
         pessoa1.observacoes = "Desenvolvedor Python Senior"
-        pessoa_dao.salvar(pessoa1)
-        pessoa_atualizada = pessoa_dao.buscarPorId(pessoa1.id)
-        assert pessoa_atualizada.idade == 29, "Idade não foi atualizada"
-        assert pessoa_atualizada.observacoes == "Desenvolvedor Python Senior", "Observações não foram atualizadas"
-        print(f"  ✓ Pessoa atualizada: {pessoa_atualizada}")
+        pessoaDao.salvar(pessoa1)
+        pessoaAtualizada = pessoaDao.buscarPorId(pessoa1.id)
+        assert pessoaAtualizada.idade == 29, "Idade não foi atualizada"
+        assert pessoaAtualizada.observacoes == "Desenvolvedor Python Senior", "Observações não foram atualizadas"
+        print(f"  ✓ Pessoa atualizada: {pessoaAtualizada}")
         
         # UPDATE - Desativar pessoa
         print("\n✓ UPDATE - Desativando pessoa...")
         pessoa2.ativo = False
-        pessoa_dao.salvar(pessoa2)
-        pessoa_desativada = pessoa_dao.buscarPorId(pessoa2.id)
-        assert pessoa_desativada.ativo == False, "Pessoa não foi desativada"
-        print(f"  ✓ Pessoa desativada: {pessoa_desativada}")
+        pessoaDao.salvar(pessoa2)
+        pessoaDesativada = pessoaDao.buscarPorId(pessoa2.id)
+        assert pessoaDesativada.ativo == False, "Pessoa não foi desativada"
+        print(f"  ✓ Pessoa desativada: {pessoaDesativada}")
         
         # DELETE
         print("\n✓ DELETE - Deletando pessoa...")
-        sucesso = pessoa_dao.deletar(pessoa2)
+        sucesso = pessoaDao.deletar(pessoa2)
         assert sucesso, "Falha ao deletar pessoa"
-        pessoa_deletada = pessoa_dao.buscarPorId(pessoa2.id)
-        assert pessoa_deletada is None, "Pessoa ainda existe após deletar"
+        pessoaDeletada = pessoaDao.buscarPorId(pessoa2.id)
+        assert pessoaDeletada is None, "Pessoa ainda existe após deletar"
         print(f"  ✓ Pessoa deletada com sucesso")
         
         print("\n✅ TESTE 2 PASSOU - Pessoa CRUD OK\n")
