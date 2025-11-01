@@ -32,8 +32,9 @@ SQLite+POO/
 │   ├── main.py               # Sistema principal com menu unificado
 │   ├── pessoa_service.py     # Serviço interativo para gerenciar pessoas
 │   └── categoria_service.py  # Serviço interativo para gerenciar categorias
-├── exemplo_uso_orm.py        # Exemplo completo de uso das classes
-├── teste_projeto.py          # Suite de testes automatizados
+├── teste/
+│   ├── exemplo_uso_orm.py    # Exemplo completo de uso das classes
+│   └── teste_projeto.py      # Suite de testes automatizados
 ├── exemplo_bd.db             # Arquivo do banco de dados SQLite (gerado automaticamente)
 └── README.md                 # Este arquivo
 ```
@@ -130,7 +131,7 @@ Menu disponível:
 Demonstra operações CRUD completas usando as classes diretamente:
 
 ```bash
-python3 exemplo_uso_orm.py
+python3 teste/exemplo_uso_orm.py
 ```
 
 ### Executar Testes
@@ -138,7 +139,7 @@ python3 exemplo_uso_orm.py
 Executa suite completa de testes automatizados:
 
 ```bash
-python3 teste_projeto.py
+python3 teste/teste_projeto.py
 ```
 
 Os testes verificam:
@@ -298,10 +299,10 @@ categoriaDao.deletar(categoria)
 
 ### Exemplo 1: Uso Completo
 
-Execute o arquivo `exemplo_uso_orm.py` para ver um exemplo completo de todas as operações:
+Execute o arquivo `teste/exemplo_uso_orm.py` para ver um exemplo completo de todas as operações:
 
 ```bash
-python3 exemplo_uso_orm.py
+python3 teste/exemplo_uso_orm.py
 ```
 
 ### Exemplo 2: Uso Programático
@@ -351,7 +352,7 @@ db.fechar()
 O projeto inclui uma suite completa de testes automatizados:
 
 ```bash
-python3 teste_projeto.py
+python3 teste/teste_projeto.py
 ```
 
 **Testes incluídos:**

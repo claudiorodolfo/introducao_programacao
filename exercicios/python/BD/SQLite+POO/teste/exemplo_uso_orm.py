@@ -1,6 +1,12 @@
 """
 Exemplo de uso das classes ORM para demonstrar operações CRUD
 """
+import sys
+import os
+
+# Adicionar o diretório pai ao path para permitir imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from bd.database import DatabaseConnection
 from model.categoria import Categoria
 from model.pessoa import Pessoa
@@ -9,7 +15,9 @@ from dao.pessoa_dao import PessoaDAO
 
 
 def exemploCrudCompleto():   # Criar conexão
-    db = DatabaseConnection('exemplo_bd.db')
+    # Caminho do banco de dados relativo ao diretório raiz do projeto
+    dbPath = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'exemplo_bd.db')
+    db = DatabaseConnection(dbPath)
     
     try:
         db.conectar()
