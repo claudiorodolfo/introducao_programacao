@@ -140,10 +140,8 @@ class PessoaService:
         
         except ValueError as e:
             print(f"❌ Erro de validação: {e}")
-            self.db.rollback()
         except Exception as e:
             print(f"❌ Erro ao criar pessoa: {e}")
-            self.db.rollback()
     
     def exibir_detalhes_pessoa(self, pessoa: Pessoa):
         """Exibe os detalhes completos de uma pessoa"""
@@ -364,7 +362,6 @@ class PessoaService:
             print(f"❌ Erro: {e}")
         except Exception as e:
             print(f"❌ Erro ao atualizar pessoa: {e}")
-            self.db.rollback()
     
     def deletar_pessoa(self):
         """Solicita um ID e deleta a pessoa correspondente"""
@@ -400,7 +397,6 @@ class PessoaService:
             print("❌ Erro: ID deve ser um número inteiro!")
         except Exception as e:
             print(f"❌ Erro ao deletar pessoa: {e}")
-            self.db.rollback()
     
     def executar(self):
         """Método principal que executa o loop do menu"""

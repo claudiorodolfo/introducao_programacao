@@ -342,7 +342,6 @@ def executarTestes():
         print(f"\n❌ ERRO CRÍTICO: {e}")
         import traceback
         traceback.print_exc()
-        db.rollback()
         return False
     finally:
         db.fechar()

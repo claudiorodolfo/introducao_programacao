@@ -162,7 +162,6 @@ def exemploCrudCompleto():   # Criar conexão
         
     except Exception as e:
         print(f"Erro: {e}")
-        db.rollback()
         import traceback
         traceback.print_exc()
     finally:
