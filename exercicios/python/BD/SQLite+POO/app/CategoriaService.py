@@ -57,7 +57,6 @@ class CategoriaService:
         
         except Exception as e:
             print(f"❌ Erro ao criar categoria: {e}")
-            self.db.rollback()
     
     def listar_categorias(self):
         """Lista todas as categorias cadastradas"""
@@ -170,7 +169,6 @@ class CategoriaService:
             print("❌ Erro: ID deve ser um número inteiro!")
         except Exception as e:
             print(f"❌ Erro ao atualizar categoria: {e}")
-            self.db.rollback()
     
     def deletar_categoria(self):
         """Solicita um ID e deleta a categoria correspondente"""
@@ -208,7 +206,6 @@ class CategoriaService:
             print("❌ Erro: ID deve ser um número inteiro!")
         except Exception as e:
             print(f"❌ Erro ao deletar categoria: {e}")
-            self.db.rollback()
     
     def executar(self):
         """Método principal que executa o loop do menu"""
