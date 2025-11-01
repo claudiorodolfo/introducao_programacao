@@ -5,13 +5,13 @@ import sqlite3
 
 class DatabaseConnection:
     def __init__(self, dbPath: str = 'exemplo_bd.db'):
-        self.db_path = dbPath
+        self.dbPath = dbPath
         self.conn = None
     
     def conectar(self):
         if self.conn is None:
             # isolation_level=None ativa autocommit (cada operação é commitada automaticamente)
-            self.conn = sqlite3.connect(self.db_path, isolation_level=None)
+            self.conn = sqlite3.connect(self.dbPath, isolation_level=None)
             self.conn.row_factory = sqlite3.Row
             self.conn.execute("PRAGMA foreign_keys = ON")
         return self.conn

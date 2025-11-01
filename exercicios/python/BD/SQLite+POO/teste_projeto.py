@@ -232,15 +232,15 @@ def testarIntegridadeReferencial(db):
     print("TESTE 3: Integridade Referencial e Constraints")
     print("=" * 60)
     
-    categoria_dao = CategoriaDAO(db)
-    pessoa_dao = PessoaDAO(db)
+    categoriaDao = CategoriaDAO(db)
+    pessoaDao = PessoaDAO(db)
     
     try:
         # Testar constraint UNIQUE em email
         print("\n✓ Testando constraint UNIQUE em email...")
-        categoria = categoria_dao.listarTodas()[0]  # Pegar primeira categoria
+        categoria = categoriaDao.listarTodas()[0]  # Pegar primeira categoria
         
-        pessoa_duplicada = Pessoa(
+        pessoaDuplicada = Pessoa(
             id=None,
             nome="Teste Duplicado",
             email="joao@example.com",  # Email já existe
@@ -249,7 +249,7 @@ def testarIntegridadeReferencial(db):
         )
         
         try:
-            pessoa_dao.salvar(pessoa_duplicada)
+            pessoaDao.salvar(pessoaDuplicada)
             print("  ⚠️  AVISO: Constraint UNIQUE não foi aplicada (pode ser esperado se não houver constraint)")
         except Exception as e:
             if "UNIQUE" in str(e) or "unique" in str(e).lower():
@@ -259,7 +259,7 @@ def testarIntegridadeReferencial(db):
         
         # Testar constraint de foreign key
         print("\n✓ Testando integridade referencial (foreign key)...")
-        pessoa_invalida = Pessoa(
+        pessoaInvalida = Pessoa(
             id=None,
             nome="Teste FK",
             email="teste_fk@example.com",
@@ -268,7 +268,7 @@ def testarIntegridadeReferencial(db):
         )
         
         try:
-            pessoa_dao.salvar(pessoa_invalida)
+            pessoaDao.salvar(pessoaInvalida)
             print("  ⚠️  AVISO: Foreign key constraint não foi verificada")
         except Exception as e:
             if "FOREIGN KEY" in str(e) or "foreign" in str(e).lower():

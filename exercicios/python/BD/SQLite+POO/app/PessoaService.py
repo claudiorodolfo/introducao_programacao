@@ -17,7 +17,7 @@ class PessoaService:
     
     def __init__(self, db: DatabaseConnection):
         self.db = db
-        self.pessoa_dao = PessoaDAO(db)
+        self.pessoaDao = PessoaDAO(db)
         self.categoriaDao = CategoriaDAO(db)
     
     def exibirMenu(self):
@@ -84,8 +84,8 @@ class PessoaService:
             return
         
         # Verificar se já existe uma pessoa com esse email
-        pessoasExistentes = self.pessoa_dao.buscarPorNome("")  # Buscar todas para verificar email
-        todasPessoas = self.pessoa_dao.listarTodas()
+        pessoasExistentes = self.pessoaDao.buscarPorNome("")  # Buscar todas para verificar email
+        todasPessoas = self.pessoaDao.listarTodas()
         for p in todasPessoas:
             if p.email.lower() == email.lower():
                 print(f"❌ Erro: Já existe uma pessoa com o email '{email}' (ID: {p.id})")
@@ -133,7 +133,7 @@ class PessoaService:
                 telefone=telefone
             )
             
-            pessoaId = self.pessoa_dao.salvar(pessoa)
+            pessoaId = self.pessoaDao.salvar(pessoa)
             print(f"\n✅ Pessoa criada com sucesso!")
             self.exibirDetalhesPessoa(pessoa)
         
@@ -169,7 +169,7 @@ class PessoaService:
         print("\n--- LISTAR TODAS AS PESSOAS ---")
         
         try:
-            pessoas = self.pessoa_dao.listarTodas()
+            pessoas = self.pessoaDao.listarTodas()
             
             if not pessoas:
                 print("⚠️  Nenhuma pessoa cadastrada.")
@@ -197,7 +197,7 @@ class PessoaService:
             idStr = input("Digite o ID da pessoa: ").strip()
             pessoaId = int(idStr)
             
-            pessoa = self.pessoa_dao.buscarPorId(pessoaId)
+            pessoa = self.pessoaDao.buscarPorId(pessoaId)
             
             if pessoa:
                 print("\n✅ Pessoa encontrada:")
@@ -221,7 +221,7 @@ class PessoaService:
             return
         
         try:
-            pessoas = self.pessoa_dao.buscarPorNome(nome)
+            pessoas = self.pessoaDao.buscarPorNome(nome)
             
             if pessoas:
                 print(f"\n✅ {len(pessoas)} pessoa(s) encontrada(s):")
@@ -252,7 +252,7 @@ class PessoaService:
                 print(f"❌ Erro: Categoria com ID {categoriaId} não encontrada!")
                 return
             
-            pessoas = self.pessoa_dao.buscarPorCategoria(categoriaId)
+            pessoas = self.pessoaDao.buscarPorCategoria(categoriaId)
             
             if pessoas:
                 print(f"\n✅ {len(pessoas)} pessoa(s) encontrada(s) na categoria '{categoria.nome}':")
@@ -277,7 +277,7 @@ class PessoaService:
             idStr = input("Digite o ID da pessoa a atualizar: ").strip()
             pessoaId = int(idStr)
             
-            pessoa = self.pessoa_dao.buscarPorId(pessoaId)
+            pessoa = self.pessoaDao.buscarPorId(pessoaId)
             
             if not pessoa:
                 print(f"⚠️  Pessoa com ID {pessoaId} não encontrada.")
@@ -297,7 +297,7 @@ class PessoaService:
             novoEmail = input(f"Email [{pessoa.email}]: ").strip()
             if novoEmail:
                 # Verificar se já existe outra pessoa com esse email
-                todasPessoas = self.pessoa_dao.listarTodas()
+                todasPessoas = self.pessoaDao.listarTodas()
                 for p in todasPessoas:
                     if p.id != pessoaId and p.email.lower() == novoEmail.lower():
                         print(f"❌ Erro: Já existe outra pessoa com o email '{novoEmail}' (ID: {p.id})")
@@ -352,7 +352,7 @@ class PessoaService:
             if ativoStr:
                 pessoa.ativo = ativoStr != 'n'
             
-            self.pessoa_dao.salvar(pessoa)
+            self.pessoaDao.salvar(pessoa)
             print(f"\n✅ Pessoa atualizada com sucesso!")
             print("\nDados atualizados:")
             self.exibirDetalhesPessoa(pessoa)
@@ -370,7 +370,7 @@ class PessoaService:
             idStr = input("Digite o ID da pessoa a deletar: ").strip()
             pessoaId = int(idStr)
             
-            pessoa = self.pessoa_dao.buscarPorId(pessoaId)
+            pessoa = self.pessoaDao.buscarPorId(pessoaId)
             
             if not pessoa:
                 print(f"⚠️  Pessoa com ID {pessoaId} não encontrada.")
@@ -385,7 +385,7 @@ class PessoaService:
                 print("❌ Operação cancelada.")
                 return
             
-            sucesso = self.pessoa_dao.deletar(pessoa)
+            sucesso = self.pessoaDao.deletar(pessoa)
             
             if sucesso:
                 print(f"\n✅ Pessoa deletada com sucesso!")

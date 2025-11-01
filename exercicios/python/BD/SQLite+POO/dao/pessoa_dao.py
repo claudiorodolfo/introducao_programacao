@@ -112,8 +112,8 @@ class PessoaDAO:
     
     def criarDeRow(self, row):
         # Buscar a categoria usando o CategoriaDAO
-        categoria_dao = CategoriaDAO(self.db)
-        categoria = categoria_dao.buscarPorId(row['categoria_id'])
+        categoriaDao = CategoriaDAO(self.db)
+        categoria = categoriaDao.buscarPorId(row['categoria_id'])
         
         return Pessoa(
             id=row['id'],
