@@ -30,7 +30,6 @@ class PessoaDAO:
             FOREIGN KEY (categoria_id) REFERENCES categoria(id)
         );
         """)
-        self.db.commit()
     
     def salvar(self, pessoa: Pessoa):
         cur = self.db.cursor()
@@ -62,7 +61,6 @@ class PessoaDAO:
                   pessoa.data_nascimento, ativo_int, pessoa.observacoes, pessoa.telefone,
                   categoria_id, pessoa.id))
         
-        self.db.commit()
         return pessoa.id
     
     def buscarPorId(self, id: int):
@@ -136,7 +134,7 @@ class PessoaDAO:
     def deletar(self, pessoa: Pessoa):        
         cur = self.db.cursor()
         cur.execute("DELETE FROM pessoa WHERE id = ?;", (pessoa.id,))
-        self.db.commit()
+
         return cur.rowcount > 0
     
     def obterCategoria(self, pessoa: Pessoa):

@@ -17,7 +17,6 @@ class CategoriaDAO:
             nome TEXT NOT NULL UNIQUE
         );
         """)
-        self.db.commit()
     
     def salvar(self, categoria: Categoria):
         cur = self.db.cursor()
@@ -30,7 +29,6 @@ class CategoriaDAO:
             # UPDATE
             cur.execute("UPDATE categoria SET nome = ? WHERE id = ?;", (categoria.nome, categoria.id))
         
-        self.db.commit()
         return categoria.id
     
     def buscarPorId(self, id: int):
@@ -73,6 +71,6 @@ class CategoriaDAO:
         
         cur = self.db.cursor()
         cur.execute("DELETE FROM categoria WHERE id = ?;", (categoria.id,))
-        self.db.commit()
+
         return cur.rowcount > 0
 

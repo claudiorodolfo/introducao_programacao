@@ -25,5 +25,5 @@ class Pessoa:
     def __str__(self):
         return (f"Pessoa(id={self.id}, nome='{self.nome}', "
                 f"email='{self.email}', idade={self.idade}, "
-                f"categoria_id={self.categoria.id if self.categoria else None})")
+                f"categoria_id={self.categoria.id})")
 

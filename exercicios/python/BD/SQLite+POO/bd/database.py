@@ -3,6 +3,8 @@ Classe para gerenciar conexão com o banco de dados SQLite
 """
 import sqlite3
 
+from dao.categoria_dao import CategoriaDAO
+from dao.pessoa_dao import PessoaDAO
 
 class DatabaseConnection:
     def __init__(self, db_path: str = 'exemplo_bd.db'):
@@ -10,9 +12,9 @@ class DatabaseConnection:
         self.conn = None
     
     def conectar(self):
-
         if self.conn is None:
-            self.conn = sqlite3.connect(self.db_path)
+            # isolation_level=None ativa autocommit (cada operação é commitada automaticamente)
+            self.conn = sqlite3.connect(self.db_path, isolation_level=None)
             self.conn.row_factory = sqlite3.Row
             self.conn.execute("PRAGMA foreign_keys = ON")
         return self.conn
@@ -23,15 +25,7 @@ class DatabaseConnection:
             self.conn.close()
             self.conn = None
     
-    def commit(self):
-        """Confirma as transações pendentes"""
-        if self.conn:
-            self.conn.commit()
-    
-    def rollback(self):
-        """Desfaz as transações pendentes"""
-        if self.conn:
-            self.conn.rollback()
+
     
     def cursor(self):
         """Retorna um cursor para executar queries"""
@@ -39,12 +33,7 @@ class DatabaseConnection:
             self.conectar()
         return self.conn.cursor()
     
-    def criarTabelas(self):
-        """Cria todas as tabelas necessárias"""
-        # Importar aqui para evitar circular imports
-        from dao.categoria_dao import CategoriaDAO
-        from dao.pessoa_dao import PessoaDAO
-        
+    def criarTabelas(self):        
         # Tabela categoria
         categoria_dao = CategoriaDAO(self)
         categoria_dao.criarTabela()
@@ -54,10 +43,8 @@ class DatabaseConnection:
         pessoa_dao.criarTabela()
     
     def limparDados(self):
-        """Remove todos os dados das tabelas"""
         cur = self.cursor()
         cur.execute("DELETE FROM pessoa;")
         cur.execute("DELETE FROM categoria;")
         cur.execute("DELETE FROM sqlite_sequence WHERE name IN ('pessoa', 'categoria');")
-        self.commit()
 
