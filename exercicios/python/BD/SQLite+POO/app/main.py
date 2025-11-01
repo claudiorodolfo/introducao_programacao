@@ -10,7 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from bd.database import DatabaseConnection
 
-# Importar serviços - tentar ambos os formatos para compatibilidade
+# Importar serviços
 from categoria_service import CategoriaService
 from pessoa_service import PessoaService
 

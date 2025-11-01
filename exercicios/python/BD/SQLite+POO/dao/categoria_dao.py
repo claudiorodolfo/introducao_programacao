@@ -8,15 +8,6 @@ class CategoriaDAO:
     def __init__(self, db: DatabaseConnection):
         self.db = db
     
-    def criarTabela(self):
-        cur = self.db.cursor()
-        cur.execute("""
-        CREATE TABLE IF NOT EXISTS categoria (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome TEXT NOT NULL UNIQUE
-        );
-        """)
-    
     def salvar(self, categoria: Categoria):
         cur = self.db.cursor()
         

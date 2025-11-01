@@ -10,26 +10,6 @@ class PessoaDAO:
     def __init__(self, db: DatabaseConnection):
         self.db = db
     
-    def criarTabela(self):
-        cur = self.db.cursor()
-        cur.execute("""
-        CREATE TABLE IF NOT EXISTS pessoa (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome TEXT NOT NULL,
-            email TEXT UNIQUE NOT NULL,
-            idade INTEGER CHECK (idade >= 0 AND idade <= 120),
-            altura REAL,
-            peso REAL,
-            data_nascimento TEXT,
-            ativo INTEGER DEFAULT 1,
-            observacoes TEXT,
-            telefone TEXT,
-            categoria_id INTEGER NOT NULL,
-            momento_cadastro TEXT DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (categoria_id) REFERENCES categoria(id)
-        );
-        """)
-    
     def salvar(self, pessoa: Pessoa):
         cur = self.db.cursor()
         
