@@ -3,9 +3,6 @@ Classe para gerenciar conexão com o banco de dados SQLite
 """
 import sqlite3
 
-from dao.categoria_dao import CategoriaDAO
-from dao.pessoa_dao import PessoaDAO
-
 class DatabaseConnection:
     def __init__(self, db_path: str = 'exemplo_bd.db'):
         self.db_path = db_path
@@ -33,7 +30,11 @@ class DatabaseConnection:
             self.conectar()
         return self.conn.cursor()
     
-    def criarTabelas(self):        
+    def criarTabelas(self):
+        # Importar aqui para evitar importação circular
+        from dao.categoria_dao import CategoriaDAO
+        from dao.pessoa_dao import PessoaDAO
+        
         # Tabela categoria
         categoria_dao = CategoriaDAO(self)
         categoria_dao.criarTabela()

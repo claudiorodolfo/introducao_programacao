@@ -1,7 +1,6 @@
 """
 DAO (Data Access Object) para operações de banco de dados da tabela categoria
 """
-from typing import List, Optional
 from bd.database import DatabaseConnection
 from model.categoria import Categoria
 

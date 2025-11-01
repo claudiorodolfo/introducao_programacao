@@ -5,7 +5,6 @@ DAO (Data Access Object) para operações de banco de dados da tabela pessoa
 from bd.database import DatabaseConnection
 from dao.categoria_dao import CategoriaDAO
 from model.pessoa import Pessoa
-from model.categoria import Categoria
 
 class PessoaDAO:
     def __init__(self, db: DatabaseConnection):
