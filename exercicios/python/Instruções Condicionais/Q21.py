@@ -1,5 +1,0 @@
-a = int(input("Digite o 1º número: "))
-b = int(input("Digite o 2º número: "))
-c = int(input("Digite o 3º número: "))
-positivos = sum(1 for x in [a,b,c] if x > 0)
-print("Quantidade de positivos:", positivos)
