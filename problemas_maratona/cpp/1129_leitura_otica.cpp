@@ -19,8 +19,8 @@ são (255, 0, 255, 255, 255), sabemos que o aluno marcou a alternativa B para es
 No entanto, como as folhas são processadas individualmente, o valor médio de nível de cinza 
 para o quadrado totalmente preenchido não é necessariamente 0 (pode ser maior); da mesma 
 forma, o valor para o quadrado não preenchido não é necessariamente 255 (pode ser menor). 
-O prof. João determinou que os quadrados seriam divididos em duas classes: aqueles com média 
-menor ou igual a 127 serão considerados pretos e aqueles com média maior a 127 serão 
+O prof. João determinou que os quadrados seriam divididos em duas classes: aqueles com 
+média menor ou igual a 127 serão considerados pretos e aqueles com média maior a 127 serão 
 considerados brancos.
 Obviamente, nem todas as questões das folhas de resposta são marcadas de maneira correta. 
 Pode acontecer de um aluno se enganar e marcar mais de uma alternativa na mesma questão, ou 
@@ -30,18 +30,18 @@ valores dos cinco retângulos correspondentes às alternativas de uma questão d
 a alternativa corretamente marcada, ou se a resposta à questão deve ser desconsiderada.
 
 Entrada
-A entrada contém vários casos de teste. A primeira linha de um caso de teste contém um número 
-inteiro N indicando o número de questões da folha de respostas (1 = N = 255). Cada uma das N 
-linhas seguintes descreve a resposta a uma questão e contém cinco números inteiros A, B, C, D e E, 
-indicando os valores de nível de cinza médio para cada uma das alternativas da resposta 
-(0 = A, B, C, D, E = 255).
+A entrada contém vários casos de teste. A primeira linha de um caso de teste contém um 
+número  inteiro N indicando o número de questões da folha de respostas (1 = N = 255). Cada 
+uma das N linhas seguintes descreve a resposta a uma questão e contém cinco números inteiros 
+A, B, C, D e E, indicando os valores de nível de cinza médio para cada uma das alternativas 
+da resposta (0 = A, B, C, D, E = 255).
 O ultimo caso de teste é seguido por uma linha que contém apenas um número zero.
 
 Saída
-Para cada caso de teste da entrada seu programa deve imprimir N linhas, cada linha correspondendo 
-a uma questão. Se a resposta à questão foi corretamente preenchida na folha de resposta, a linha 
-deve conter a alternativa marcada (‘A’, ‘B’, ‘C’, ‘D’ ou ‘E’). Caso contrário, a linha deve conter 
-o caractere ‘*’ (asterisco).
+Para cada caso de teste da entrada seu programa deve imprimir N linhas, cada linha 
+correspondendo a uma questão. Se a resposta à questão foi corretamente preenchida na folha 
+de resposta, a linha  deve conter a alternativa marcada (‘A’, ‘B’, ‘C’, ‘D’ ou ‘E’). Caso 
+contrário, a linha deve conter o caractere ‘*’ (asterisco).
 */
 #include <iostream>
  
