@@ -32,9 +32,9 @@ a alternativa corretamente marcada, ou se a resposta à questão deve ser descon
 Entrada
 A entrada contém vários casos de teste. A primeira linha de um caso de teste contém um 
 número  inteiro N indicando o número de questões da folha de respostas (1 = N = 255). Cada 
-uma das N linhas seguintes descreve a resposta a uma questão e contém cinco números inteiros 
-A, B, C, D e E, indicando os valores de nível de cinza médio para cada uma das alternativas 
-da resposta (0 = A, B, C, D, E = 255).
+uma das N linhas seguintes descreve a resposta a uma questão e contém cinco números 
+inteiros A, B, C, D e E, indicando os valores de nível de cinza médio para cada uma das 
+alternativas da resposta (0 = A, B, C, D, E = 255).
 O ultimo caso de teste é seguido por uma linha que contém apenas um número zero.
 
 Saída
