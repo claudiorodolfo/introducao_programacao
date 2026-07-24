@@ -1,21 +1,21 @@
 //Problema 2242 - Huaauhahhuahau
-//https://www.urionlinejudge.com.br/judge/pt/problems/view/2242
+//https://judge.beecrowd.com/pt/problems/view/2242
 /*
-Em chats, é muito comum entre jovens e adolescentes utilizar sequências de letras, que parecem muitas vezes aleatórias, para representar risadas. Alguns exemplos comuns são:
+Em chats, Ã© muito comum entre jovens e adolescentes utilizar sequÃªncias de letras, que parecem muitas vezes aleatÃ³rias, para representar risadas. Alguns exemplos comuns sÃ£o:
 huaauhahhuahau
 hehehehe
 ahahahaha
 jaisjjkasjksjjskjakijs
 huehuehue
 
-Cláudia é uma jovem programadora que ficou intrigada pela sonoridade das “risadas digitais”. Algumas delas ela nem mesmo consegue pronunciar! Mas ela percebeu que algumas delas parecem transmitir melhor o sentimento da risada que outras. A primeira coisa que ela percebeu é que as consoantes não interferem no quanto as risadas digitais influenciam na transmissão do sentimento. A segunda coisa que ela percebeu é que as risadas digitais mais engra¸cadas são aquelas em que as sequências de vogais são iguais quando lidas na ordem natural (da esquerda para a direita) ou na ordem inversa (da direita para a esquerda), ignorando as consoantes. Por exemplo, “hahaha” e “huaauhahhuahau” estão entre as risadas mais engraçadas, enquanto “riajkjdhhihhjak” e “huehuehue” não estão entre as mais engraçadas.
-Cláudia está muito atarefada com a análise estatística das risadas digitais e pediu sua ajuda para escrever um programa que determine, para uma risada digital, se ela é das mais engraçadas ou não.
+ClÃ¡udia Ã© uma jovem programadora que ficou intrigada pela sonoridade das â€œrisadas digitaisâ€. Algumas delas ela nem mesmo consegue pronunciar! Mas ela percebeu que algumas delas parecem transmitir melhor o sentimento da risada que outras. A primeira coisa que ela percebeu Ã© que as consoantes nÃ£o interferem no quanto as risadas digitais influenciam na transmissÃ£o do sentimento. A segunda coisa que ela percebeu Ã© que as risadas digitais mais engraÂ¸cadas sÃ£o aquelas em que as sequÃªncias de vogais sÃ£o iguais quando lidas na ordem natural (da esquerda para a direita) ou na ordem inversa (da direita para a esquerda), ignorando as consoantes. Por exemplo, â€œhahahaâ€ e â€œhuaauhahhuahauâ€ estÃ£o entre as risadas mais engraÃ§adas, enquanto â€œriajkjdhhihhjakâ€ e â€œhuehuehueâ€ nÃ£o estÃ£o entre as mais engraÃ§adas.
+ClÃ¡udia estÃ¡ muito atarefada com a anÃ¡lise estatÃ­stica das risadas digitais e pediu sua ajuda para escrever um programa que determine, para uma risada digital, se ela Ã© das mais engraÃ§adas ou nÃ£o.
 
 Entrada
-A entrada é composta por uma linha, contendo uma sequência de no máximo 50 caracteres, formada apenas por letras minúsculas sem acentuação. As vogais são as letras ‘a’,‘e’,‘i’,‘o’,‘u’. A sequência contém pelo menos uma vogal.
+A entrada Ã© composta por uma linha, contendo uma sequÃªncia de no mÃ¡ximo 50 caracteres, formada apenas por letras minÃºsculas sem acentuaÃ§Ã£o. As vogais sÃ£o as letras â€˜aâ€™,â€˜eâ€™,â€˜iâ€™,â€˜oâ€™,â€˜uâ€™. A sequÃªncia contÃ©m pelo menos uma vogal.
 
-Saída
-Seu programa deve produzir uma linha contendo um caractere, “S” caso a risada seja das mais engra¸cadas, ou “N” caso contrário.
+SaÃ­da
+Seu programa deve produzir uma linha contendo um caractere, â€œSâ€ caso a risada seja das mais engraÂ¸cadas, ou â€œNâ€ caso contrÃ¡rio.
 */
 
 #include <iostream>
@@ -43,8 +43,8 @@ int main() {
 	}
 	//cout<<risada_vogais<<endl;
 	
-	//laco que verifica se a string é um palindromo, ou seja,
-	//identica de tras para frente.	Por exemplo, uaauauaau, é palindromo.
+	//laco que verifica se a string Ã© um palindromo, ou seja,
+	//identica de tras para frente.	Por exemplo, uaauauaau, Ã© palindromo.
 	bool palindromo = true;
 	for (int i = 0; i < risada_vogais.size()/2; i++) {
 		int indice_inverso = (risada_vogais.size()-1) - i;	
@@ -54,7 +54,7 @@ int main() {
 		}
 	}
 	
-	//saida. Só imprime S, se não entrar dentro do if do bloco acima			
+	//saida. SÃ³ imprime S, se nÃ£o entrar dentro do if do bloco acima			
 	if (palindromo)	{	
 		printf("S\n");
 	}  else {
