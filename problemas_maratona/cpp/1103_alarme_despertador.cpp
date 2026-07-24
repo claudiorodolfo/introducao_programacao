@@ -1,5 +1,5 @@
 //1103 - Alarme Despertador
-//https://www.urionlinejudge.com.br/judge/pt/problems/view/1103
+//https://judge.beecrowd.com/pt/problems/view/1103
 
 /*
 Daniela é enfermeira em um grande hospital, e tem os horários de trabalho muito variáveis. Para piorar, ela tem sono pesado, e uma grande dificuldade para acordar com relógios despertadores.
