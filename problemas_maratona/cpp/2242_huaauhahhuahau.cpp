@@ -24,13 +24,13 @@ ajuda para escrever um programa que determine, para uma risada digital, se ela �
 engraçadas ou não.
 
 Entrada
-A entrada é composta por uma linha, contendo uma sequência de no máximo 50 caracteres, formada 
-apenas por letras minúsculas sem acentuação. As vogais são as letras ‘a’,‘e’,‘i’,‘o’,‘u’. A 
-sequência contém pelo menos uma vogal.
+A entrada é composta por uma linha, contendo uma sequência de no máximo 50 caracteres, 
+formada apenas por letras minúsculas sem acentuação. As vogais são as letras 
+‘a’,‘e’,‘i’,‘o’,‘u’. A sequência contém pelo menos uma vogal.
 
 Saída
-Seu programa deve produzir uma linha contendo um caractere, “S” caso a risada seja das mais 
-engraçadas, ou “N” caso contrário.
+Seu programa deve produzir uma linha contendo um caractere, “S” caso a risada seja das 
+mais engraçadas, ou “N” caso contrário.
 */
 
 #include <iostream>
