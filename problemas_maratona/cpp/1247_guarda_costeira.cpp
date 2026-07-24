@@ -18,9 +18,9 @@ permitir uma trajetória tão retilínea quanto a costa.
 Entrada
 A entrada é composta por diversos casos de teste e termina com final de arquivo (EOF). Cada 
 caso de teste é descrito em um linha contendo três inteiros, D (1 â‰¤ D â‰¤ 100), 
-VF (1 â‰¤ VF â‰¤ 100) e VG (1 â‰¤ VG â‰¤ 100), indicando respectivamente a distância inicial 
-entre o fugitivo e a Guarda Costeira, a velocidade da embarcação do fugitivo e a velocidade 
-da embarcação da Guarda Costeira.
+VF (1 â‰¤ VF â‰¤ 100) e VG (1 â‰¤ VG â‰¤ 100), indicando respectivamente a distância 
+inicial entre o fugitivo e a Guarda Costeira, a velocidade da embarcação do fugitivo e a 
+velocidade da embarcação da Guarda Costeira.
 
 Saída
 Para cada caso de teste imprima uma linha contendo â€˜Sâ€™ se for possível que a Guarda 
