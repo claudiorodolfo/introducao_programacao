@@ -1,14 +1,14 @@
 //Problema 1245 - Botas Perdidas
-//https://www.urionlinejudge.com.br/judge/pt/problems/view/1245
+//https://judge.beecrowd.com/pt/problems/view/1245
 /*
-A divisão de Suprimentos de Botas e Calçados do Exército comprou um grande número de pares de botas de vários tamanhos para seus soldados. No entanto, por uma falha de empacotamento da fábrica contratada, nem todas as caixas entregues continham um par de botas correto, com duas botas do mesmo tamanho, uma para cada pé. O sargento mandou que os recrutas retirassem todas as botas de todas as caixas para reembalá-las, desta vez corretamente.
-Quando o sargento descobriu que você sabia programar, ele solicitou com a gentileza habitual que você escrevesse um programa que, dada a lista contendo a descrição de cada bota entregue, determina quantos pares corretos de botas poderão ser formados no total.
+A divisÃ£o de Suprimentos de Botas e CalÃ§ados do ExÃ©rcito comprou um grande nÃºmero de pares de botas de vÃ¡rios tamanhos para seus soldados. No entanto, por uma falha de empacotamento da fÃ¡brica contratada, nem todas as caixas entregues continham um par de botas correto, com duas botas do mesmo tamanho, uma para cada pÃ©. O sargento mandou que os recrutas retirassem todas as botas de todas as caixas para reembalÃ¡-las, desta vez corretamente.
+Quando o sargento descobriu que vocÃª sabia programar, ele solicitou com a gentileza habitual que vocÃª escrevesse um programa que, dada a lista contendo a descriÃ§Ã£o de cada bota entregue, determina quantos pares corretos de botas poderÃ£o ser formados no total.
 
 Entrada
-A entrada é composta por diversos casos de teste e termina com final de arquivo (EOF). A primeira linha de um caso de teste contém um inteiro N (2 = N = 10 4), N é par, indicando o número de botas individuais entregues. Cada uma das N linhas seguintes descreve uma bota, contendo um número inteiro M (30 = M = 60) e uma letra L, separados por uma espaço em branco. M indica o número da bota e L indica o pé da bota: L = 'D' indica que a bota é para o pé direito, L = 'E' indica que a bota é para o pé esquerdo.
+A entrada Ã© composta por diversos casos de teste e termina com final de arquivo (EOF). A primeira linha de um caso de teste contÃ©m um inteiro N (2 = N = 10 4), N Ã© par, indicando o nÃºmero de botas individuais entregues. Cada uma das N linhas seguintes descreve uma bota, contendo um nÃºmero inteiro M (30 = M = 60) e uma letra L, separados por uma espaÃ§o em branco. M indica o nÃºmero da bota e L indica o pÃ© da bota: L = 'D' indica que a bota Ã© para o pÃ© direito, L = 'E' indica que a bota Ã© para o pÃ© esquerdo.
 
-Saída
-Para cada caso de teste imprima uma linha contendo um único número inteiro indicando o número total de pares corretos que podem ser formados.
+SaÃ­da
+Para cada caso de teste imprima uma linha contendo um Ãºnico nÃºmero inteiro indicando o nÃºmero total de pares corretos que podem ser formados.
 */
 #include <iostream>
 
